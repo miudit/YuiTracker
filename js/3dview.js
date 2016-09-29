@@ -964,6 +964,8 @@ newpos = Cesium.Cartesian3.fromDegrees(satellites[bb.satelliteindex].get('longit
         for (var i=0; i< selected.length; i++) {
             addOrbitLine(selected[i]);
         }
+        drawSatellite();
+        drawSatVisibleCircle();
         //drawFootprint();
     }
 
@@ -1138,6 +1140,16 @@ pos = Cesium.Cartesian3.fromDegrees(cartPoints[i].lon, cartPoints[i].lat, cartPo
 
     }
 
+    function drawSatellite() {
+        var selected = YuiSatTrack.getTles().getSelected();
+        var sat = selected[i]
+        var orbit = sat.getOrbitData();
+    }
+
+    function drawSatVisibleCircle() {
+
+    }
+
     function disableInput(scene) {
         var controller = scene.screenSpaceCameraController;
         controller.enableTranslate = false;
@@ -1172,6 +1184,10 @@ pos = Cesium.Cartesian3.fromDegrees(cartPoints[i].lon, cartPoints[i].lat, cartPo
         //var centralBody = scene.Globe;
         //scene.terrainProvider = terrainProvider;
         jQuery('#3d-show-terrain').setButtonState(useTerrainProvider);
+    }
+
+    function drawReportPins() {
+        
     }
 
     function init3DView() {
@@ -1315,6 +1331,8 @@ pos = Cesium.Cartesian3.fromDegrees(cartPoints[i].lon, cartPoints[i].lat, cartPo
         //scene.primitives.add(_cityLabels);
 
         jQuery(window).trigger('resize');
+
+        drawReportPins();
 
         //plotObservers();
 

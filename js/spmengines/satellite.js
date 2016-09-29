@@ -439,6 +439,10 @@ var YUISATELLITE = function(tle0, tle1, tle2) {
 			return orbit;
 		},
 
+        getSatPos : function() {
+            return _satmap;
+        },
+
         calculateTodaysPasses : function(observer, mutualObserver) {
             _satPasses.configureGroundStation(observer.getLat(), observer.getLon());
             _satPasses.configureMutualGroundStation(mutualObserver.getLat(), mutualObserver.getLon(), mutualObserver.getEnabled());
