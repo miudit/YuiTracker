@@ -963,9 +963,10 @@ newpos = Cesium.Cartesian3.fromDegrees(satellites[bb.satelliteindex].get('longit
         var selected = YuiSatTrack.getTles().getSelected();
         for (var i=0; i< selected.length; i++) {
             addOrbitLine(selected[i]);
+            drawSatellite(selected[i]);
+            drawSatVisibleCircle(selected[i]);
         }
-        drawSatellite();
-        drawSatVisibleCircle();
+
         //drawFootprint();
     }
 
@@ -1140,15 +1141,25 @@ pos = Cesium.Cartesian3.fromDegrees(cartPoints[i].lon, cartPoints[i].lat, cartPo
 
     }
 
-    function drawSatellite() {
+    function drawSatellite(sat) {
         var selected = YuiSatTrack.getTles().getSelected();
-        var sat = selected[i]
         var orbit = sat.getOrbitData();
+        var blueBox = viewer.entities.add({
+    name : 'Blue box',
+    position: Cesium.Cartesian3.fromDegrees(sat.get('latitude'), sat.get('longitude'), sat.get('altitude')),
+    box : {
+        dimensions : new Cesium.Cartesian3(400000.0, 300000.0, 500000.0),
+        material : Cesium.Color.BLUE
     }
+});
+
+      }
 
     function drawSatVisibleCircle() {
 
     }
+
+
 
     function disableInput(scene) {
         var controller = scene.screenSpaceCameraController;
@@ -1187,7 +1198,7 @@ pos = Cesium.Cartesian3.fromDegrees(cartPoints[i].lon, cartPoints[i].lat, cartPo
     }
 
     function drawReportPins() {
-        
+
     }
 
     function init3DView() {
@@ -1321,6 +1332,7 @@ pos = Cesium.Cartesian3.fromDegrees(cartPoints[i].lon, cartPoints[i].lat, cartPo
         scene.primitives.add(orbitLines);
         //scene.primitives.add(selectedLines);
         scene.primitives.add(passLines);
+
         //scene.primitives.add(footprintCircle);
         //scene.primitives.add(_labels);
         //scene.primitives.add(planetsBillboards);
