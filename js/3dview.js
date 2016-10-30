@@ -1195,7 +1195,8 @@ pos = Cesium.Cartesian3.fromDegrees(cartPoints[i].lon, cartPoints[i].lat, cartPo
     }
 
     function drawReportPins() {
-
+        reports = getReports()
+        console.log("reports = ",  reports)
     }
 
     function init3DView() {
@@ -1396,6 +1397,23 @@ pos = Cesium.Cartesian3.fromDegrees(cartPoints[i].lon, cartPoints[i].lat, cartPo
         jQuery('#3d-projection').disable();
         jQuery('#3d-provider').disable();
         jQuery('#3d-follow').disable();
+    }
+
+    function getReports() {
+        var result;
+        $.ajax({
+            type: 'GET',
+            url: './php/get-reports.php',
+            dataType: 'json',
+            async: false,
+            success: function(json){
+                result = json;
+            },
+            error: function(){
+                console.log("failed to get from get-reports.php");
+            }
+        });
+        return result;
     }
 
     return {
