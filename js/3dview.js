@@ -1145,21 +1145,18 @@ pos = Cesium.Cartesian3.fromDegrees(cartPoints[i].lon, cartPoints[i].lat, cartPo
         var selected = YuiSatTrack.getTles().getSelected();
         var orbit = sat.getOrbitData();
         var blueBox = viewer.entities.add({
-    name : 'Blue box',
-    position: Cesium.Cartesian3.fromDegrees(sat.get('latitude'), sat.get('longitude'), sat.get('altitude')),
-    box : {
-        dimensions : new Cesium.Cartesian3(400000.0, 300000.0, 500000.0),
-        material : Cesium.Color.BLUE
+            name : 'Blue box',
+            position: Cesium.Cartesian3.fromDegrees(sat.get('latitude'), sat.get('longitude'), sat.get('altitude')),
+            box : {
+                dimensions : new Cesium.Cartesian3(400000.0, 300000.0, 500000.0),
+                material : Cesium.Color.BLUE
+            }
+        });
     }
-});
-
-      }
 
     function drawSatVisibleCircle() {
 
     }
-
-
 
     function disableInput(scene) {
         var controller = scene.screenSpaceCameraController;
