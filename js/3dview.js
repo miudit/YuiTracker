@@ -1239,15 +1239,14 @@ pos = Cesium.Cartesian3.fromDegrees(cartPoints[i].lon, cartPoints[i].lat, cartPo
         _cityLabels = new Cesium.LabelCollection();
 
         var url = jQuery(location).attr('href');
-        var bingAPIKey = '';
-        if (url.indexOf('ag.local') === -1 && url.indexOf('agsattrack.com') === -1) {
+        /*if (url.indexOf('ag.local') === -1 && url.indexOf('agsattrack.com') === -1) {
         } else {
             if (url.indexOf('agsattrack.com') === -1) {
                 bingAPIKey = 'Ak1cHw0o6SGIUYUR2khejaEc1ttaB9tsrSaq7rPxOUOkE4oVTuQchtZFEciJHRH_';
             } else {
                 bingAPIKey = 'AkU8YjZ3dvP_fyNkibv_UYfvvlfjuXYzVsWe9ccbYiSy8xXMrroZsq0YQJnGbrFG';
             }
-        }
+        }*/
         /*TILE_PROVIDERS = {
             'bing' : {
                 provider : new Cesium.BingMapsImageryProvider({
@@ -1256,25 +1255,6 @@ pos = Cesium.Cartesian3.fromDegrees(cartPoints[i].lon, cartPoints[i].lat, cartPo
                     mapStyle : Cesium.BingMapsStyle.AERIAL
                 }),
                 toolbarTitle : 'Bing Maps'
-            },
-            'osm' : {
-                provider : new Cesium.OpenStreetMapImageryProvider({
-                    url : 'http://otile1.mqcdn.com/tiles/1.0.0/osm'
-                }),
-                toolbarTitle : 'Open Street maps'
-            },
-            'staticimage' : {
-                provider : new Cesium.SingleTileImageryProvider({
-                    url : 'images/maps/' + _settings.staticimage
-                }),
-                toolbarTitle : 'Static Image'
-            },
-            'arcgis' : {
-                provider : new Cesium.ArcGisMapServerImageryProvider(
-                    {url: 'http://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer'//,
-                  //  proxy: new Cesium.DefaultProxy('http://cesium.agi.com/proxy/')
-                }),
-                toolbarTitle : 'Arc Gis'
             }
         };*/
 
