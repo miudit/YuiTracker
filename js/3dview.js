@@ -1195,8 +1195,26 @@ pos = Cesium.Cartesian3.fromDegrees(cartPoints[i].lon, cartPoints[i].lat, cartPo
     }
 
     function drawReportPins() {
-        reports = getReports()
-        console.log("reports = ",  reports)
+        $.when(
+            reports = getReports()
+        ).done(function(){
+            console.log("reports = ");
+            console.log(reports);
+            var pinBuilder = new Cesium.PinBuilder();
+            for( var i in reports ){
+                var report = reports[i];
+                var lat = report.lat;
+                var lon = report.lon
+                var bluePin = viewer.entities.add({
+                    name : 'Blank blue pin',
+                    position : Cesium.Cartesian3.fromDegrees(lon, lat),
+                    billboard : {
+                        image : pinBuilder.fromColor(Cesium.Color.ROYALBLUE, 48).toDataURL(),
+                        verticalOrigin : Cesium.VerticalOrigin.BOTTOM
+                    }
+                });
+            }
+        });
     }
 
     function init3DView() {

@@ -1,8 +1,9 @@
 <?php
 
     #require_once('/var/www/web-app/public/components/connect_database.php');
-    require_once('/Users/dai/Documents/YuiTracker/php/connect_database.php');
-    require('./js_console_log.php');
+    require_once('/Library/WebServer/Documents/YuiTracker/php/connect_database.php');
+
+    include 'ChromePhp.php';
 
     mb_language("uni");
     mb_internal_encoding("utf-8");
@@ -13,7 +14,7 @@
     $stmt = $pdo->prepare($sql);
     $flag = $stmt->execute();
 
-    js_console_log($sql);
+    ChromePhp::log('logloglog');
 
     $reports = array();
     while( $row = $stmt->fetch(PDO::FETCH_ASSOC) ){
