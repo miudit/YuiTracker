@@ -137,10 +137,10 @@ var YUITLE = function() {
     }*/
 
 	function loadElements() {
-		rawKeps = Array()      
-		rawKeps[0] = 'ISS (ZARYA)  '
-		rawKeps[1] = '1 25544U 98067A   16268.77393519  .00003277  00000-0  57145-4 0  9992'
-		rawKeps[2] = '2 25544  51.6455 281.2406 0006222   2.2541 341.7918 15.53924782 20479'
+		rawKeps = Array()
+		rawKeps[0] = 'ISS (ZARYA)'
+		rawKeps[1] = '1 25544U 98067A   16304.87782578  .00005242  00000-0  85556-4 0  9992'
+		rawKeps[2] = '2 25544  51.6439 101.2578 0007101 126.7131  31.9955 15.54390870 26095'
 		processRawData();
 	}
 

@@ -1218,18 +1218,34 @@ pos = Cesium.Cartesian3.fromDegrees(cartPoints[i].lon, cartPoints[i].lat, cartPo
         });
     }
 
+    function calcSatVisibleRadius(sat) {
+        altitude = sat.get('altitude')
+        var earth_radius = 6378.137;
+        var visible_radius = earth_radius * Math.acos(earth_radius/(earth_radius+altitude));
+        return visible_radius*1000;
+    }
+
     function drawSatVisibleCircle(sat) {
-        /*var circleGeometry = new Cesium.CircleGeometry({
-          center : Cesium.Cartesian3.fromDegrees(-75.59777, 40.03883),
-          radius : 100000.0
+        var radius = calcSatVisibleRadius(sat);
+        console.log("radius = ", radius)
+        var instance = new Cesium.GeometryInstance({
+            geometry : new Cesium.EllipseGeometry({
+                center : Cesium.Cartesian3.fromDegrees(sat.get('longitude'), sat.get('latitude')),
+                height : 1000,
+                semiMinorAxis : radius,
+                semiMajorAxis : radius,
+                rotation : Cesium.Math.PI_OVER_FOUR,
+                vertexFormat : Cesium.VertexFormat.POSITION_AND_NORMAL
+            }),
+            id : 'object returned when this instance is picked and to get/set per-instance attributes',
+            attributes : {
+                color : Cesium.ColorGeometryInstanceAttribute.fromColor(Cesium.Color.RED.withAlpha(0.5))
+            }
         });
-        var circle = new Cesium.Primitive({
-            geometryInstances: [circleGeometry],
-            appearance: new Cesium.PerInstanceColorAppearance({
-                closed: true
-            })
-        })
-        scene.primitives.add(circleGeometry);*/
+        scene.primitives.add(new Cesium.Primitive({
+            geometryInstances : instance,
+            appearance : new Cesium.PerInstanceColorAppearance()
+        }));
     }
 
     function disableInput(scene) {
