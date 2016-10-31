@@ -1231,7 +1231,7 @@ pos = Cesium.Cartesian3.fromDegrees(cartPoints[i].lon, cartPoints[i].lat, cartPo
         var instance = new Cesium.GeometryInstance({
             geometry : new Cesium.EllipseGeometry({
                 center : Cesium.Cartesian3.fromDegrees(sat.get('longitude'), sat.get('latitude')),
-                height : 1000,
+                height : 5000,
                 semiMinorAxis : radius,
                 semiMajorAxis : radius,
                 rotation : Cesium.Math.PI_OVER_FOUR,
@@ -1239,7 +1239,7 @@ pos = Cesium.Cartesian3.fromDegrees(cartPoints[i].lon, cartPoints[i].lat, cartPo
             }),
             id : 'object returned when this instance is picked and to get/set per-instance attributes',
             attributes : {
-                color : Cesium.ColorGeometryInstanceAttribute.fromColor(Cesium.Color.RED.withAlpha(0.5))
+                color : Cesium.ColorGeometryInstanceAttribute.fromColor(Cesium.Color.RED.withAlpha(0.3))
             }
         });
         scene.primitives.add(new Cesium.Primitive({
