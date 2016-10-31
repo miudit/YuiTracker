@@ -1141,10 +1141,51 @@ pos = Cesium.Cartesian3.fromDegrees(cartPoints[i].lon, cartPoints[i].lat, cartPo
 
     }
 
+    function getSatHeading(sat, points) {
+        var lon = sat.get('longitude');
+        var lat = sat.get('latitude')
+        var top_index = 0
+        var top_dist = 100000
+        for( var i=0; i<points.length; i++ ){
+            var dist = Math.sqrt((points[i].lon-lon)*(points[i].lon-lon) + (points[i].lat-lat)*(points[i].lat-lat))
+            if( dist < top_dist ){
+                top_dist = dist;
+                top_index = i
+            }
+        }
+        var next_index = top_index + 1;
+        if ( points.length <= next_index )
+            next_index = top_index - 1
+        var lon_diff = points[top_index].lon-points[next_index].lon;
+        var lat_diff = points[top_index].lat-points[next_index].lat;
+        console.log("top_index = ", top_index, "next_index = ", next_index )
+        console.log("top_lon = ", points[top_index].lon, "top_lat = ", points[top_index].lat)
+        console.log("next_lon = ", points[next_index].lon, "next_lat = ", points[next_index].lat)
+        var direction = new Cesium.Cartographic(lon_diff, lat_diff, 0);
+        return direction;
+    }
+
     function drawSatellite(sat) {
         var selected = YuiSatTrack.getTles().getSelected();
         var orbit = sat.getOrbitData();
+        console.log("orbit = ", orbit.points)
+        console.log("lon = ", sat.get('longitude'),"lat = ", sat.get('latitude'))
         console.log("altitude = ", sat.get('altitude'))
+        //var left = Cesium.Cartesian3.fromDegrees(orbit.points[0].lon, orbit.points[0].lat);
+        //var right = Cesium.Cartesian3.fromDegrees(orbit.points[31].lon, orbit.points[31].lat);
+        //var left = new Cesium.Cartographic(orbit.points[0].lon, orbit.points[0].lat, 0);
+        //var right = new Cesium.Cartographic(10.0, 0.0, 0);
+        //var left = new Cesium.Cartographic(10.0, 10.0, 0);
+        //var right = new Cesium.Cartographic(10.0, 0.0, 0);
+        //var left = new Cesium.Cartographic(10.0, 10.0, 0);
+        //var direction = new Cesium.Cartographic(left.longitude-right.longitude, left.latitude-right.latitude, 0);
+        //var left = Cesium.Cartesian3.fromDegrees(0.0, 0.0);
+        //var right = Cesium.Cartesian3.fromDegrees(10.0, 0.0);
+        //var direction = new Cesium.Cartesian3(left.x-right.x, left.y-right.y, 0)
+        var direction = getSatHeading(sat, orbit.points)
+        console.log("direction = ", direction)
+        var angle = Math.atan2(direction.latitude, direction.longitude)
+        console.log("angle = ", angle)
         /*var blueBox = viewer.entities.add({
             name : 'Blue box',
             position: Cesium.Cartesian3.fromDegrees(sat.get('longitude'), sat.get('latitude'), sat.get('altitude')*1000),
@@ -1159,11 +1200,13 @@ pos = Cesium.Cartesian3.fromDegrees(cartPoints[i].lon, cartPoints[i].lat, cartPo
                 uri : './models/ITF-2PFM_new.gltf'
             }
         });*/
+        viewer.extend(Cesium.viewerCesiumInspectorMixin);
         var position = Cesium.Cartesian3.fromDegrees(sat.get('longitude'), sat.get('latitude'), sat.get('altitude')*1000*1.2);
-        var heading = Cesium.Math.toRadians(0);
-        var pitch = 0;
-        var roll = 0;
-        var orientation = Cesium.Transforms.headingPitchRollQuaternion(position, heading, pitch, roll);
+        //var position = Cesium.Cartesian3.fromDegrees(0, 0, sat.get('altitude')*1000*1.2);
+        var heading = Cesium.Math.toRadians(180);
+        var pitch = Cesium.Math.toRadians(0);
+        var roll = Cesium.Math.toRadians(0);
+        var orientation = Cesium.Transforms.headingPitchRollQuaternion(position, angle, pitch, roll);
         var entity = viewer.entities.add({
             name : 'ITF-2',
             position : position,

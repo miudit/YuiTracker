@@ -23,12 +23,39 @@
   <script src="/js/startup.js"></script>
   <style>
       @import url(./Build/Cesium/Widgets/widgets.css);
-      html, body, #cesiumContainer {
+      html, body {
           width: 100%; height: 100%; margin: 0; padding: 0; overflow: hidden;
+      }
+      #cesiumContainer {
+          width: 90%; height:90%; float:right;
+      }
+      #sideContainer {
+          width: 10%; height: 90%; float:left; background-color: #A9A9A9;
+      }
+      #bottomContainer {
+          width: 100%; height: 10%; position:absolute; bottom:0; background-color: #A9A9A9;
+      }
+      #logo {
+          width: 10%; height: auto; position:absolute; top:0;
       }
   </style>
 </head>
 <body>
+  <div id="sideContainer">
+      <img id="logo" src="./image/yui_logo.png" />
+  </div>
+  <div id="bottomContainer" class="container">
+      <div style="width:10%; float:left;"></div>
+      <div style="width:90%; float:right;">
+          <form action="cgi-bin/formmail.cgi" method="post">
+          <p>
+            緯度：<input type="text" name="lat" size="40"> 経度：<input type="text" name="lon" size="40"> <br>
+            受信データ：<input type="text" name="data" size="40"> コメント：<input type="text" name="comment" size="40">
+            <input type="submit" value="送信">
+          </p>
+          </form>
+      </div>
+  </div>
   <div id="cesiumContainer"></div>
   <script>
     var bingAPIKey = 'eYQRI0XvnhMEi5nkk3BP~d3179loNhbAIkgMvCdxjuA~Ar2FasqaLe3L9smvcOzPwDqNTaVbs7aTfGuXWRRmvMvbQHATV6aWEYX_vR86j_2F';
