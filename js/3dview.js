@@ -1145,18 +1145,48 @@ pos = Cesium.Cartesian3.fromDegrees(cartPoints[i].lon, cartPoints[i].lat, cartPo
         var selected = YuiSatTrack.getTles().getSelected();
         var orbit = sat.getOrbitData();
         console.log("altitude = ", sat.get('altitude'))
-        var blueBox = viewer.entities.add({
+        /*var blueBox = viewer.entities.add({
             name : 'Blue box',
             position: Cesium.Cartesian3.fromDegrees(sat.get('longitude'), sat.get('latitude'), sat.get('altitude')*1000),
             box : {
                 dimensions : new Cesium.Cartesian3(300000.0, 300000.0, 300000.0),
                 material : Cesium.Color.BLUE
             }
+        });*/
+        /*var entity = viewer.entities.add({
+            position : Cesium.Cartesian3.fromDegrees(135.0744619, 35.0503706),
+            model : {
+                uri : './models/ITF-2PFM_new.gltf'
+            }
+        });*/
+        var position = Cesium.Cartesian3.fromDegrees(sat.get('longitude'), sat.get('latitude'), sat.get('altitude')*1000*1.2);
+        var heading = Cesium.Math.toRadians(0);
+        var pitch = 0;
+        var roll = 0;
+        var orientation = Cesium.Transforms.headingPitchRollQuaternion(position, heading, pitch, roll);
+        var entity = viewer.entities.add({
+            name : 'ITF-2',
+            position : position,
+            orientation : orientation,
+            model : {
+                uri : './models/ITF-2PFM_new.glb',
+                scale : 2500000
+            }
         });
     }
 
-    function drawSatVisibleCircle() {
-
+    function drawSatVisibleCircle(sat) {
+        /*var circleGeometry = new Cesium.CircleGeometry({
+          center : Cesium.Cartesian3.fromDegrees(-75.59777, 40.03883),
+          radius : 100000.0
+        });
+        var circle = new Cesium.Primitive({
+            geometryInstances: [circleGeometry],
+            appearance: new Cesium.PerInstanceColorAppearance({
+                closed: true
+            })
+        })
+        scene.primitives.add(circleGeometry);*/
     }
 
     function disableInput(scene) {
