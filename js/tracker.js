@@ -242,6 +242,32 @@ var Yuisattrack = function() {
         });
     }
 
+	function setAjaxCallers() {
+		$('#submit').click(function(){
+			var data = {
+				lon : $('#lon').val(),
+				lat : $('#lat').val(),
+				data : $('#data').val(),
+				comment : $('#comment').val(),
+			};
+			$.ajax({
+				type: "POST",
+				url: "./php/add-report.php",
+				data: data,
+				success: function(data, dataType){
+	  				console.log("SUCCESS! data = ", data);
+				},
+				error: function(XMLHttpRequest, textStatus, errorThrown){
+	  				alert('Error : ' + errorThrown);
+	  				$("#XMLHttpRequest").html("XMLHttpRequest : " + XMLHttpRequest.status);
+	  				$("#textStatus").html("textStatus : " + textStatus);
+	  				$("#errorThrown").html("errorThrown : " + errorThrown);
+				}
+  			});
+  			return false;
+		});
+	}
+
     return {
 
         getTles : function() {
@@ -256,6 +282,7 @@ var Yuisattrack = function() {
 			var _active = 0;
 
             bindEvents();
+			setAjaxCallers();
 
 			_observers[0] = new YUIOBSERVER(YUIOBSERVER.types.HOME).init(YUISETTINGS.getObserver());
 			var _3dview = new YUI3DVIEW()

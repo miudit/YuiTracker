@@ -47,11 +47,11 @@
   <div id="bottomContainer" class="container">
       <div style="width:10%; float:left;"></div>
       <div style="width:90%; float:right;">
-          <form action="cgi-bin/formmail.cgi" method="post">
+          <form method="post">
           <p>
-            緯度：<input type="text" name="lat" size="40"> 経度：<input type="text" name="lon" size="40"> <br>
-            受信データ：<input type="text" name="data" size="40"> コメント：<input type="text" name="comment" size="40">
-            <input type="submit" value="送信">
+            緯度：<input type="text" id="lat" size="40"> 経度：<input type="text" id="lon" size="40"> <br>
+            受信データ：<input type="text" id="data" size="40"> コメント：<input type="text" id="comment" size="40">
+            <input id="submit" type="submit" value="送信">
           </p>
           </form>
       </div>
