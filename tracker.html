@@ -30,33 +30,73 @@
           width: 90%; height:90%; float:right;
       }
       #sideContainer {
-          width: 10%; height: 90%; float:left; background-color: #A9A9A9;
+          width: 20%; height: 100%; float:left; background-color: #c0c0c0;
       }
-      #bottomContainer {
-          width: 100%; height: 10%; position:absolute; bottom:0; background-color: #A9A9A9;
+      #Container {
+        width: 80%; height: 100%; float:right; background-color: #c0c0c0;
       }
-      #logo {
-          width: 10%; height: auto; position:absolute; top:0;
-      }
+
   </style>
 </head>
 <body>
   <div id="sideContainer">
-      <img id="logo" src="./image/yui_logo.png" />
+      <img src="./image/yui_logo2.png" style="position:absolute;top:30px;left:70px;width:100;height;100;" alt=""　　/>
+      <img src="./image/bg2.png" style="position:absolute;top:150px;left:25px;width:200px;height:440px;" alt=""　/>
+      <img src="./image/bg.png" style="position:absolute;top:190px;left:48px;width:150px;height;50px;" alt=""　/>
+      <img src="./image/pin.png" style="position:absolute;top:160px;left:35px;width:5;height;5;" alt=""　　/>
+      <img src="./image/pin.png" style="position:absolute;top:160px;left:200px;width:5;height;5;" alt=""　　/>
+      <img src="./image/pin.png" style="position:absolute;top:570px;left:35px;width:5;height;5;" alt=""　　/>
+      <img src="./image/pin.png" style="position:absolute;top:570px;left:200px;width:5;height;5;" alt=""　　/>
+      <p><font style="position:absolute;top:305px;left:45px;" size="1">バッテリ温度</font></p>
+      <img src="./image/bg3.png" style="position:absolute;top:305px;left:150px;width:30px;height:12px;" alt=""　　/>
+      <p><font style="position:absolute;top:305px;left:182px;" size="1">度(セ氏)</font></p>
+      <p><font style="position:absolute;top:325px;left:45px;" size="1">+Y面パネル温度</font></p>
+      <img src="./image/bg3.png" style="position:absolute;top:325px;left:150px;width:30px;height:12px;" alt=""　　/>
+      <p><font style="position:absolute;top:325px;left:182px;" size="1">度(セ氏)</font></p>
+      <p><font style="position:absolute;top:345px;left:45px;" size="1">-Y面パネル温度</font></p>
+      <img src="./image/bg3.png" style="position:absolute;top:345px;left:150px;width:30px;height:12px;" alt=""　　/>
+      <p><font style="position:absolute;top:345px;left:182px;" size="1">度(セ氏)</font></p>
+      <p><font style="position:absolute;top:365px;left:45px;" size="1">+Z面パネル温度</font></p>
+      <img src="./image/bg3.png" style="position:absolute;top:365px;left:150px;width:30px;height:12px;" alt=""　　/>
+      <p><font style="position:absolute;top:365px;left:182px;" size="1">度(セ氏)</font></p>
+      <p><font style="position:absolute;top:385px;left:45px;" size="1">-Y面パネル温度</font></p>
+      <img src="./image/bg3.png" style="position:absolute;top:385px;left:150px;width:30px;height:12px;" alt=""　　/>
+      <p><font style="position:absolute;top:385px;left:182px;" size="1">度(セ氏)</font></p>
+      <p><font style="position:absolute;top:405px;left:45px;" size="1">太陽電池電圧</font></p>
+      <img src="./image/bg3.png" style="position:absolute;top:405px;left:150px;width:30px;height:12px;" alt=""　　/>
+      <p><font style="position:absolute;top:425px;left:45px;" size="1">太陽電池電流</font></p>
+      <img src="./image/bg3.png" style="position:absolute;top:425px;left:150px;width:30px;height:12px;" alt=""　　/>
+      <p><font style="position:absolute;top:445px;left:45px;" size="1">消費電流</font></p>
+      <img src="./image/bg3.png" style="position:absolute;top:445px;left:150px;width:30px;height:12px;" alt=""　　/>
+      <p><font style="position:absolute;top:465px;left:45px;" size="1">アンテナ展開</font></p>
+      <img src="./image/bg3.png" style="position:absolute;top:465px;left:150px;width:30px;height:12px;" alt=""　　/>
+      <p><font style="position:absolute;top:485px;left:45px;" size="1">バッテリ電圧</font></p>
+      <img src="./image/bg3.png" style="position:absolute;top:485px;left:150px;width:30px;height:12px;" alt=""　　/>
+      <p><font style="position:absolute;top:505px;left:45px;" size="1">バッテリ温度1,2平均</font></p>
+      <img src="./image/bg3.png" style="position:absolute;top:505px;left:150px;width:30px;height:12px;" alt=""　　/>
+      <p><font style="position:absolute;top:525px;left:45px;" size="1">現在の通信系統</font></p>
+      <img src="./image/bg3.png" style="position:absolute;top:525px;left:150px;width:30px;height:12px;" alt=""　　/>
+      <p><font style="position:absolute;top:545px;left:40px;" size="1">通信系統B受信成功回数</font></p>
+      <img src="./image/bg3.png" style="position:absolute;top:545px;left:150px;width:30px;height:12px;" alt=""　　/>
+
   </div>
-  <div id="bottomContainer" class="container">
-      <div style="width:10%; float:left;"></div>
-      <div style="width:90%; float:right;">
-          <form method="post">
-          <p>
-            緯度：<input type="text" id="lat" size="40"> 経度：<input type="text" id="lon" size="40"> <br>
-            受信データ：<input type="text" id="data" size="40"> コメント：<input type="text" id="comment" size="40">
-            <input id="submit" type="submit" value="送信">
-          </p>
-          </form>
-      </div>
+  <div id="Container">
+    <img src="./image/bg4.png" style="position:absolute;top:15px;left:26%;width:920px;height:380px" alt=""　/>
+      <HR color="black" style="position:absolute;top:405px;left:20%;width:100%">
+      <img src="./image/sikiri.png" style="position:absolute;left:20%;height:650px" alt=""　/>
+      <img src="./image/dodai.png" style="position:absolute;top:420px;left:24%;width:950px;height:240px" alt=""　/>
+      <p><font color="#f00" style="position:absolute;top:425px;left:52%;width:900px;height:220px" size="5">受信報告フォーム</font></p>
+      <p><font style="position:absolute;top:500px;left:500px;" size="1">緯度</font></p>
+      <img src="./image/bg3.png" style="position:absolute;top:500px;left:530px;width:30px;height:12px;" alt=""　　/>
+      <p><font style="position:absolute;top:500px;left:570px;" size="1">度</font></p>
+      <p><font style="position:absolute;top:520px;left:500px;" size="1">経度</font></p>
+      <img src="./image/bg3.png" style="position:absolute;top:520px;left:530px;width:30px;height:12px;" alt=""　　/>
+      <p><font style="position:absolute;top:520px;left:570px;" size="1">度</font></p>
+
+      <p><font style="position:absolute;top:600px;left:900px;" size="1">受信報告→</font></p>
+
   </div>
-  <div id="cesiumContainer"></div>
+  <div style="position:absolute;top:35px;left:28%;width:855px;height:335px" id="cesiumContainer"></div>
   <script>
     var bingAPIKey = 'eYQRI0XvnhMEi5nkk3BP~d3179loNhbAIkgMvCdxjuA~Ar2FasqaLe3L9smvcOzPwDqNTaVbs7aTfGuXWRRmvMvbQHATV6aWEYX_vR86j_2F';
     Cesium.BingMapsApi.defaultKey = bingAPIKey;
