@@ -21,89 +21,169 @@
   <script src="/js/modernizer.js"></script>
   <script src="/js/platform.js"></script>
   <script src="/js/startup.js"></script>
+  <link rel="stylesheet" type="text/css" href="tracker.css"/>
+  <link rel="stylesheet" type="text/css" href="css/slick.css"/>
+  <link rel="stylesheet" type="text/css" href="css/slick-theme.css"/>
+  <link rel="stylesheet" href="css/remodal.css">
+  <link rel="stylesheet" href="css/remodal-default-theme.css">
+</head>
   <style>
-      @import url(./Build/Cesium/Widgets/widgets.css);
-      html, body {
-          width: 100%; height: 100%; margin: 0; padding: 0; overflow: hidden;
+    @import url(./Build/Cesium/Widgets/widgets.css);
+    html, body {
+        width: 100%; height: 100%; margin: 0; padding: 0; overflow: hidden;
       }
       #cesiumContainer {
-          width: 90%; height:90%; float:right;
-      }
-      #sideContainer {
-          width: 20%; height: 100%; float:left; background-color: #c0c0c0;
+        width: 60%; height:60%; float:right;
       }
       #Container {
-        width: 80%; height: 100%; float:right; background-color: #c0c0c0;
+        width: 100%; height: 100%; float:right; background-color: #c0c0c0;
       }
 
   </style>
 </head>
 <body>
-  <div id="sideContainer">
-      <img src="./image/yui_logo2.png" style="position:absolute;top:30px;left:70px;width:100;height;100;" alt=""　　/>
-      <img src="./image/bg2.png" style="position:absolute;top:150px;left:25px;width:200px;height:440px;" alt=""　/>
-      <img src="./image/bg.png" style="position:absolute;top:190px;left:48px;width:150px;height;50px;" alt=""　/>
-      <img src="./image/pin.png" style="position:absolute;top:160px;left:35px;width:5;height;5;" alt=""　　/>
-      <img src="./image/pin.png" style="position:absolute;top:160px;left:200px;width:5;height;5;" alt=""　　/>
-      <img src="./image/pin.png" style="position:absolute;top:570px;left:35px;width:5;height;5;" alt=""　　/>
-      <img src="./image/pin.png" style="position:absolute;top:570px;left:200px;width:5;height;5;" alt=""　　/>
-      <p><font style="position:absolute;top:305px;left:45px;" size="1">バッテリ温度</font></p>
-      <img src="./image/bg3.png" style="position:absolute;top:305px;left:150px;width:30px;height:12px;" alt=""　　/>
-      <p><font style="position:absolute;top:305px;left:182px;" size="1">度(セ氏)</font></p>
-      <p><font style="position:absolute;top:325px;left:45px;" size="1">+Y面パネル温度</font></p>
-      <img src="./image/bg3.png" style="position:absolute;top:325px;left:150px;width:30px;height:12px;" alt=""　　/>
-      <p><font style="position:absolute;top:325px;left:182px;" size="1">度(セ氏)</font></p>
-      <p><font style="position:absolute;top:345px;left:45px;" size="1">-Y面パネル温度</font></p>
-      <img src="./image/bg3.png" style="position:absolute;top:345px;left:150px;width:30px;height:12px;" alt=""　　/>
-      <p><font style="position:absolute;top:345px;left:182px;" size="1">度(セ氏)</font></p>
-      <p><font style="position:absolute;top:365px;left:45px;" size="1">+Z面パネル温度</font></p>
-      <img src="./image/bg3.png" style="position:absolute;top:365px;left:150px;width:30px;height:12px;" alt=""　　/>
-      <p><font style="position:absolute;top:365px;left:182px;" size="1">度(セ氏)</font></p>
-      <p><font style="position:absolute;top:385px;left:45px;" size="1">-Y面パネル温度</font></p>
-      <img src="./image/bg3.png" style="position:absolute;top:385px;left:150px;width:30px;height:12px;" alt=""　　/>
-      <p><font style="position:absolute;top:385px;left:182px;" size="1">度(セ氏)</font></p>
-      <p><font style="position:absolute;top:405px;left:45px;" size="1">太陽電池電圧</font></p>
-      <img src="./image/bg3.png" style="position:absolute;top:405px;left:150px;width:30px;height:12px;" alt=""　　/>
-      <p><font style="position:absolute;top:425px;left:45px;" size="1">太陽電池電流</font></p>
-      <img src="./image/bg3.png" style="position:absolute;top:425px;left:150px;width:30px;height:12px;" alt=""　　/>
-      <p><font style="position:absolute;top:445px;left:45px;" size="1">消費電流</font></p>
-      <img src="./image/bg3.png" style="position:absolute;top:445px;left:150px;width:30px;height:12px;" alt=""　　/>
-      <p><font style="position:absolute;top:465px;left:45px;" size="1">アンテナ展開</font></p>
-      <img src="./image/bg3.png" style="position:absolute;top:465px;left:150px;width:30px;height:12px;" alt=""　　/>
-      <p><font style="position:absolute;top:485px;left:45px;" size="1">バッテリ電圧</font></p>
-      <img src="./image/bg3.png" style="position:absolute;top:485px;left:150px;width:30px;height:12px;" alt=""　　/>
-      <p><font style="position:absolute;top:505px;left:45px;" size="1">バッテリ温度1,2平均</font></p>
-      <img src="./image/bg3.png" style="position:absolute;top:505px;left:150px;width:30px;height:12px;" alt=""　　/>
-      <p><font style="position:absolute;top:525px;left:45px;" size="1">現在の通信系統</font></p>
-      <img src="./image/bg3.png" style="position:absolute;top:525px;left:150px;width:30px;height:12px;" alt=""　　/>
-      <p><font style="position:absolute;top:545px;left:40px;" size="1">通信系統B受信成功回数</font></p>
-      <img src="./image/bg3.png" style="position:absolute;top:545px;left:150px;width:30px;height:12px;" alt=""　　/>
 
-  </div>
   <div id="Container">
-    <img src="./image/bg4.png" style="position:absolute;top:15px;left:26%;width:920px;height:380px" alt=""　/>
-      <HR color="black" style="position:absolute;top:405px;left:20%;width:100%">
-      <img src="./image/sikiri.png" style="position:absolute;left:20%;height:650px" alt=""　/>
-      <img src="./image/dodai.png" style="position:absolute;top:420px;left:24%;width:950px;height:240px" alt=""　/>
-      <p><font color="#f00" style="position:absolute;top:425px;left:52%;width:900px;height:220px" size="5">受信報告フォーム</font></p>
-      <p><font style="position:absolute;top:500px;left:500px;" size="1">緯度</font></p>
-      <img src="./image/bg3.png" style="position:absolute;top:500px;left:530px;width:30px;height:12px;" alt=""　　/>
-      <p><font style="position:absolute;top:500px;left:570px;" size="1">度</font></p>
-      <p><font style="position:absolute;top:520px;left:500px;" size="1">経度</font></p>
-      <img src="./image/bg3.png" style="position:absolute;top:520px;left:530px;width:30px;height:12px;" alt=""　　/>
-      <p><font style="position:absolute;top:520px;left:570px;" size="1">度</font></p>
 
-      <p><font style="position:absolute;top:600px;left:900px;" size="1">受信報告→</font></p>
+<!--全体の背景-->
+<img src="./image/zentai_needed.jpg" style="position:absolute; top:0%;left:0%;height: 100%; width: 100%;" alt=""　/>
+<img src="./image/logo.png" style="position:absolute;top:5%;left:3%;width:100;height;100;" alt=""　　/>
 
-  </div>
-  <div style="position:absolute;top:35px;left:28%;width:855px;height:335px" id="cesiumContainer"></div>
-  <script>
-    var bingAPIKey = 'eYQRI0XvnhMEi5nkk3BP~d3179loNhbAIkgMvCdxjuA~Ar2FasqaLe3L9smvcOzPwDqNTaVbs7aTfGuXWRRmvMvbQHATV6aWEYX_vR86j_2F';
-    Cesium.BingMapsApi.defaultKey = bingAPIKey;
-    var viewer = new Cesium.Viewer('cesiumContainer',{
-        animation : false,
-        timeline : false
-    });
-  </script>
+<!--モーダル-->
+<div id="modal1" class="remodal" data-remodal-id="modal">
+  <button data-remodal-action="close" class="remodal-close"></button>
+  <img src="./image/eisei_zentai.jpg" style="position:absolute; top:0%;left:0%;height: 100%; width: 100%;" alt=""　/>
+</div>
+
+<a data-remodal-target="modal" href="#" style="position:absolute;top:75%;left:80%;"><font color="#ffff00">●詳細情報</font></a>
+
+<!--fadeで入れ替わる-->
+<ul id="slider" class="slider">
+  <li><a href=""><img src="image/eisei1.jpg" style="position:relative ;top:40;left:82%;height: 150px; width: 150px;"alt="" /></a></li>
+  <li><a href=""><img src="image/eisei2.jpg" style="position:relative ;top:40;left:82%;height: 150px; width: 150px;" alt="" /></a></li>
+  <li><a href=""><img src="image/eisei3.jpg" style="position:relative ;top:40;left:82%;height: 150px; width: 150px;" alt="" /></a></li>
+</ul>
+
+<!--文字-->
+<!--右-->
+<p><font style="position:absolute;top:200px;left:1010px;" size="1" color="#ffff00">バッテリ温度平均</font></p>
+<p><font style="position:absolute;top:200px;left:1230px;" size="1" color="#ffff00">°C</font></p>
+<p><font style="position:absolute;top:230px;left:1010px;" size="1" color="#ffff00">+Y面パネル温度</font></p>
+<p><font style="position:absolute;top:230px;left:1230px;" size="1" color="#ffff00">°C</font></p>
+<p><font style="position:absolute;top:260px;left:1010px;" size="1" color="#ffff00">-Y面パネル温度</font></p>
+<p><font style="position:absolute;top:260px;left:1230px;" size="1" color="#ffff00">°C</font></p>
+<p><font style="position:absolute;top:290px;left:1010px;" size="1" color="#ffff00">+Z面パネル温度</font></p>
+<p><font style="position:absolute;top:290px;left:1230px;" size="1" color="#ffff00">°C</font></p>
+<p><font style="position:absolute;top:320px;left:1010px;" size="1" color="#ffff00">-Z面パネル温度</font></p>
+<p><font style="position:absolute;top:320px;left:1230px;" size="1" color="#ffff00">°C</font></p>
+<p><font style="position:absolute;top:350px;left:1010px;" size="1" color="#ffff00">太陽電池電圧</font></p>
+<p><font style="position:absolute;top:350px;left:1230px;" size="1" color="#ffff00">V</font></p>
+<p><font style="position:absolute;top:380px;left:1010px;" size="1" color="#ffff00">通信系統B</font></p>
+<p><font style="position:absolute;top:390px;left:1010px;" size="1" color="#ffff00">受信成功回数</font></p>
+<p><font style="position:absolute;top:385px;left:1230px;" size="1" color="#ffff00">回</font></p>
+<p><font style="position:absolute;top:415px;left:1010px;" size="1" color="#ffff00">通信系統</font></p>
+<p><font style="position:absolute;top:415px;left:1230px;" size="1" color="#ffff00">系統</font></p>
+<p><font style="position:absolute;top:450px;left:1010px" size="1" color="#ffff00">アンテナ展開状況</font></p>
+<form>
+    <ul class="textbox1">
+        <li class="heikinn">
+            <input id="heikinn" type="text" name="name" size="12">
+        </li>
+        <li class="plusY">
+            <input id="email" type="text" name="email" size="12">
+        </li>
+        <li class="minusY">
+            <input id="msg" name="msg" size="12">
+        </li>
+        <li class="plusZ">
+            <input id="msg" name="msg" size="12">
+        </li>
+        <li class="minusZ">
+            <input id="msg" name="msg" size="12">
+        </li>
+        <li class="volt">
+            <input id="msg" name="msg" size="12">
+        </li>
+        <li class="kaisuu">
+            <input id="msg" name="msg" size="12">
+        </li>
+        <li class="keitou">
+            <input id="msg" name="msg" size="12">
+        </li>
+        <li class="joukyou">
+            <input id="msg" name="msg" size="12">
+        </li>
+    </ul>
+</form>
+<!--左-->
+<p><font style="position:absolute;top:310px;left:20px;" size="3" color="#ffff00">衛星起動時間</font></p>
+<p><font style="position:absolute;top:340px;left:40px;" size="3" color="#ffff00">受信報告件数</font></p>
+<p><font style="position:absolute;top:340px;left:250px;" size="3" color="#ffff00">件</font></p>
+<form>
+<input class="kidou" name="msg" size="20">
+<input class="ken" name="msg" size="11">
+</form>
+
+<!--中央-->
+<p><font style="position:absolute;top:75%;left:42%;" size="6" >受信報告フォーム</font></p>
+<p><font style="position:absolute;top:83%;left:30%;" size="3" >・経度</font></p>
+<p><font style="position:absolute;top:83%;left:45%;" size="3" >度</font></p>
+<p><font style="position:absolute;top:83%;left:55%;" size="3" >・緯度</font></p>
+<p><font style="position:absolute;top:83%;left:70%;" size="3" >度</font></p>
+<p><font style="position:absolute;top:87%;left:30%;" size="3" >・メールアドレス</font></p>
+<p><font style="position:absolute;top:91%;left:30%;" size="3" >・受信時刻</font></p>
+<p><font style="position:absolute;top:95%;left:30%;" size="3" >・受信テキスト</font></p>
+<p><font style="position:absolute;top:89.5%;left:81.7%;" size="3" >受信報告</font></p>
+<form>
+    <ul class="textbox2">
+        <li class="keido">
+            <input id="heikinn" type="text" name="name" size="13">
+        </li>
+        <li class="ido">
+            <input id="email" type="text" name="email" size="13">
+        </li>
+        <li class="mail">
+            <input id="msg" name="msg" size="35">
+        </li>
+        <li class="time">
+            <input id="msg" name="msg" size="35">
+        </li>
+        <li class="text">
+            <input id="msg" name="msg" size="35">
+        </li>
+    </ul>
+</form>
+
+</div>
+
+<!--
+<div style="position:absolute;top:7%;left:28%;width:45%;height:60%" id="cesiumContainer"></div>
+<script>
+  var bingAPIKey = 'eYQRI0XvnhMEi5nkk3BP~d3179loNhbAIkgMvCdxjuA~Ar2FasqaLe3L9smvcOzPwDqNTaVbs7aTfGuXWRRmvMvbQHATV6aWEYX_vR86j_2F';
+  Cesium.BingMapsApi.defaultKey = bingAPIKey;
+  var viewer = new Cesium.Viewer('cesiumContainer',{
+      animation : false,
+      timeline : false
+  });
+</script>
+-->
+
+
+<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script type="text/javascript" src="slick/slick.min.js"></script>
+<script src="js/remodal.js"></script>
+<script type="text/javascript">
+$('.slider').slick({
+  fade: true,
+  arrows: true,
+  autoplay: true,
+  autoplaySpeed: 2000,
+});
+$(function() {
+  $('[data-remodal-id=notice]').remodal().open();
+});
+</script>
+
 </body>
 </html>

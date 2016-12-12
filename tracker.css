@@ -1,0 +1,68 @@
+.textbox1{
+		position:absolute;
+		list-style: none;
+		top:180px;
+		left:1090px;
+}
+.heikinn{
+	  margin-bottom: 5px;
+}
+.plusY{
+	  margin-bottom: 5px;
+}
+.minusY{
+	  margin-bottom: 5px;
+}
+.plusZ{
+	  margin-bottom: 5px;
+}
+.minusZ{
+	  margin-bottom: 10px;
+}
+.volt{
+	  margin-bottom: 10px;
+}
+.kaisuu{
+	  margin-bottom: 10px;
+}
+.keitou{
+	  margin-bottom: 20px;
+}
+.kidou{
+	position:absolute;
+	top:310px;
+	left:120px;
+}
+.ken{
+	position:absolute;
+	top:340px;
+	left:150px;
+}
+.textbox2{
+	list-style: none;
+}
+.keido{
+	position:absolute;
+	top:83%;
+	left:35%;
+}
+.ido{
+	position:absolute;
+	top:83%;
+	left:60%;
+}
+.mail{
+	position:absolute;
+	top:87%;
+	left:45%;
+}
+.time{
+	position:absolute;
+	top:91%;
+	left:45%;
+}
+.text{
+	position:absolute;
+	top:95%;
+	left:45%;
+}
