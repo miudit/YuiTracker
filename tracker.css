@@ -4,6 +4,12 @@
 		top:180px;
 		left:1090px;
 }
+.black{
+	background-color: #000000;
+	outline: 0;
+	border: none;
+	color: #ffff00;
+}
 .heikinn{
 	  margin-bottom: 5px;
 }
