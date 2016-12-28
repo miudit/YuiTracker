@@ -1,5 +1,6 @@
 <?php
 
+    #require_once('/var/www/web-app/public/components/connect_database.php');
     require_once('/Library/WebServer/Documents/YuiTracker/php/connect_database.php');
     include 'ChromePhp.php';
 
