@@ -86,8 +86,41 @@ var Yuisattrack = function() {
             }
         });*/
 
+		function setLatLng(e){
+			var mousePosition = new Cesium.Cartesian2(e.clientX, e.clientY);
+
+			console.log("mousePos = " + mousePosition)
+			console.log("ellipsoid = " + viewer.scene.globe.ellipsoid)
+
+			var ellipsoid = viewer.scene.globe.ellipsoid;
+			var cartesian = viewer.camera.pickEllipsoid(mousePosition, ellipsoid);
+			console.log("camera = " + viewer.scene.camera)
+			if (cartesian) {
+				var cartographic = ellipsoid.cartesianToCartographic(cartesian);
+				var longitudeString = Cesium.Math.toDegrees(cartographic.longitude).toFixed(2);
+				var latitudeString = Cesium.Math.toDegrees(cartographic.latitude).toFixed(2);
+
+				//alert(longitudeString + ', ' + latitudeString);
+				$("#ido").val(longitudeString)
+				$("#keido").val(latitudeString)
+			} else {
+				alert('Please zoom in more');
+			}
+		}
+
+		function addSetLatLngEventListener(){
+			viewer.canvas.addEventListener('click', setLatLng, false);
+		}
+
+		function removeSetLatLngEventListener(){
+			viewer.canvas.removeEventListener('click', setLatLng, false)
+		}
+
+		$("#pos_toggle_button").toggle(addSetLatLngEventListener, removeSetLatLngEventListener)
+
 		jQuery(document).trigger('yuisattrack.loadelements')
 		console.log("loadelements triggered")
+
 	}
 
     function calculationLoop() {

@@ -55,7 +55,12 @@
 .ido{
 	position:absolute;
 	top:83%;
-	left:60%;
+	left:50%;
+}
+.pos_toggle_button{
+	position:absolute;
+	top:83%;
+	left:63%;
 }
 .mail{
 	position:absolute;
