@@ -110,10 +110,12 @@ var Yuisattrack = function() {
 
 		function addSetLatLngEventListener(){
 			viewer.canvas.addEventListener('click', setLatLng, false);
+			$("#pos_toggle_button").val("受信位置をクリックしてください");
 		}
 
 		function removeSetLatLngEventListener(){
-			viewer.canvas.removeEventListener('click', setLatLng, false)
+			viewer.canvas.removeEventListener('click', setLatLng, false);
+			$("#pos_toggle_button").val("緯度経度をクリックで設定");
 		}
 
 		$("#pos_toggle_button").toggle(addSetLatLngEventListener, removeSetLatLngEventListener)

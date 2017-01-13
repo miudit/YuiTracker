@@ -1200,7 +1200,7 @@ pos = Cesium.Cartesian3.fromDegrees(cartPoints[i].lon, cartPoints[i].lat, cartPo
                 uri : './models/ITF-2PFM_new.gltf'
             }
         });*/
-        viewer.extend(Cesium.viewerCesiumInspectorMixin);
+        //viewer.extend(Cesium.viewerCesiumInspectorMixin);
         var position = Cesium.Cartesian3.fromDegrees(sat.get('longitude'), sat.get('latitude'), sat.get('altitude')*1000*1.2);
         //var position = Cesium.Cartesian3.fromDegrees(0, 0, sat.get('altitude')*1000*1.2);
         var heading = Cesium.Math.toRadians(180);
@@ -1288,7 +1288,7 @@ pos = Cesium.Cartesian3.fromDegrees(cartPoints[i].lon, cartPoints[i].lat, cartPo
         $.when(
             reports = getReports()
         ).done(function(){
-            $("#report_count").val(reports.length);
+            $("#report_count").html(reports.length);
             var pinBuilder = new Cesium.PinBuilder();
             for( var i in reports ){
                 var report = reports[i];
@@ -1315,15 +1315,15 @@ pos = Cesium.Cartesian3.fromDegrees(cartPoints[i].lon, cartPoints[i].lat, cartPo
             async: false,
             success: function(json){
                 var telemetry = json[0];
-                $("#heikinn").val(telemetry.bat_temp_ave);
-                $("#plusY").val(telemetry.pannel_temp_plusY);
-                $("#minusY").val(telemetry.pannel_temp_minusY);
-                $("#plusZ").val(telemetry.pannel_temp_plusZ);
-                $("#minusZ").val(telemetry.pannel_temp_minusZ);
-                $("#volt").val(telemetry.bat_voltage);
-                $("#kaisuu").val(telemetry.comsysB_numof_succesful_reception);
-                $("#keitou").val(telemetry.com_system);
-                $("#joukyou").val(telemetry.antenna_open);
+                $("#heikinn").html(telemetry.bat_temp_ave);
+                $("#plusY").html(telemetry.pannel_temp_plusY);
+                $("#minusY").html(telemetry.pannel_temp_minusY);
+                $("#plusZ").html(telemetry.pannel_temp_plusZ);
+                $("#minusZ").html(telemetry.pannel_temp_minusZ);
+                $("#volt").html(telemetry.bat_voltage);
+                $("#kaisuu").html(telemetry.comsysB_numof_succesful_reception);
+                $("#keitou").html(telemetry.com_system);
+                $("#joukyou").html(telemetry.antenna_open);
             },
             error: function(){
                 console.log("failed to get from get-telemetry.php");

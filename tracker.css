@@ -1,51 +1,49 @@
+body{
+	font-family: helvetica, arial, 'hiragino kaku gothic pro', meiryo, 'ms pgothic', sans-serif;
+}
+
 .textbox1{
 		position:absolute;
 		list-style: none;
 		top:180px;
 		left:1090px;
 }
+.table1{
+	position:absolute;
+	list-style: none;
+	top:30%;
+	left:80%;
+}
+.table2{
+	position:absolute;
+	list-style: none;
+	top:40%;
+	left:3%;
+}
 .black{
 	background-color: #000000;
 	outline: 0;
 	border: none;
 	color: #ffff00;
+	text-align: right;
 }
-.heikinn{
-	  margin-bottom: 5px;
+.black2{
+	background-color: #000000;
+	outline: 0;
+	border: none;
+	color: #ffff00;
 }
-.plusY{
-	  margin-bottom: 5px;
-}
-.minusY{
-	  margin-bottom: 5px;
-}
-.plusZ{
-	  margin-bottom: 5px;
-}
-.minusZ{
-	  margin-bottom: 10px;
-}
-.volt{
-	  margin-bottom: 10px;
-}
-.kaisuu{
-	  margin-bottom: 10px;
-}
-.keitou{
-	  margin-bottom: 20px;
-}
-.kidou{
-	position:absolute;
-	top:310px;
-	left:120px;
-}
-.ken{
-	position:absolute;
-	top:340px;
-	left:150px;
-}
-.textbox2{
+.table3{
 	list-style: none;
+	position:absolute;
+	top:81%;
+	left:35%;
+}
+.table4{
+	list-style: none;
+	position:absolute;
+	top:85%;
+	left:35%;
 }
 .keido{
 	position:absolute;
