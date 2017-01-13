@@ -199,7 +199,14 @@ var YUISATELLITE = function(tle0, tle1, tle2) {
         /**
         * Only rebuild the orbit data every 60 seconds
         */
-        if (_orbitAge !== null && Date.DateDiff('s', new Date(), _orbitAge) < 60) {
+
+        secondDistance = function (src, dst) {
+            var deltaMillsecond = dst.getTime() - src.getTime();
+            return deltaMillsecond / 1000;
+        }
+
+        //if (_orbitAge !== null && Date.DateDiff('s', new Date(), _orbitAge) < 60) {
+        if (_orbitAge !== null && secondDistance(new Date(), _orbitAge) < 60) {
             return;
         }
 

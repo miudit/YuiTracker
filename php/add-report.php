@@ -16,14 +16,17 @@
     $stmt = $pdo->prepare($sql);
     $flag = $stmt->execute(array($data, $latitude, $longitude, $rst, $time, $comment));*/
 
-
-    $sql = 'insert into reports (time, data, latitude, longitude) values (?,?,?,?)';
-    $stmt = $pdo->prepare($sql);
-    $flag = $stmt->execute(array($time, $data, $latitude, $longitude));
-    $flag = true;
+    if( empty($data) ) {
+        $flag = false;
+    }
+    else {
+        $sql = 'insert into reports (time, data, latitude, longitude) values (?,?,?,?)';
+        $stmt = $pdo->prepare($sql);
+        $flag = $stmt->execute(array($time, $data, $latitude, $longitude));
+    }
     if($flag){
         // post to slack
-        $slackApiKey = 'xoxp-7972272885-7972577940-122385156663-7180f1d073ee114ac801957a68cfde65';
+        $slackApiKey = 'xoxp-7972272885-7972577940-128032241270-edfb498b9be5aa3664128d1cf5204062';
         $attachments = array(
             "fallback" => "Report Received! - Data : ${data} From : (${longitude}, ${latitude})",
             "text" => "Report Received!",
@@ -51,10 +54,13 @@
         $botname = 'YuiBot';
         $icon_emoji = ':mission_logo:';
         $url = "https://slack.com/api/chat.postMessage?token=${slackApiKey}&channel=reception_report&attachments=${attachments}&username=${botname}&icon_emoji=${icon_emoji}";
-        var_dump(file_get_contents($url));
+        file_get_contents($url);
+        print((int)$flag);
     }
     else{
-        print('failed to insert<br>');
+        //print('failed to insert<br>');
+        $val = (int)$flag;
+        print($val);
     }
 
 ?>

@@ -66,6 +66,8 @@ var YUI3DVIEW = function(element) {
 
     var _footprintPolygons = [];
 
+    var _visibleCirclePrimitives = [];
+
     var satImages;
 
     if (typeof element === 'undefined') {
@@ -1207,7 +1209,10 @@ pos = Cesium.Cartesian3.fromDegrees(cartPoints[i].lon, cartPoints[i].lat, cartPo
         var pitch = Cesium.Math.toRadians(0);
         var roll = Cesium.Math.toRadians(0);
         var orientation = Cesium.Transforms.headingPitchRollQuaternion(position, angle, pitch, roll);
-        var entity = viewer.entities.add({
+
+        viewer.entities.remove(viewer.entities.getById('ITF-2'))
+        var entity = {
+            id : 'ITF-2',
             name : 'ITF-2',
             position : position,
             orientation : orientation,
@@ -1215,7 +1220,8 @@ pos = Cesium.Cartesian3.fromDegrees(cartPoints[i].lon, cartPoints[i].lat, cartPo
                 uri : './models/ITF-2PFM_new.glb',
                 scale : 2500000
             }
-        });
+        };
+        viewer.entities.add(entity);
     }
 
     function calcSatVisibleRadius(sat) {
@@ -1227,7 +1233,10 @@ pos = Cesium.Cartesian3.fromDegrees(cartPoints[i].lon, cartPoints[i].lat, cartPo
 
     function drawSatVisibleCircle(sat) {
         var radius = calcSatVisibleRadius(sat);
-        console.log("radius = ", radius)
+        console.log("radius = ", radius);
+        for (i=0;i<_visibleCirclePrimitives.length;i++) {
+            scene.primitives.remove(_visibleCirclePrimitives[i]);
+        }
         var instance = new Cesium.GeometryInstance({
             geometry : new Cesium.EllipseGeometry({
                 center : Cesium.Cartesian3.fromDegrees(sat.get('longitude'), sat.get('latitude')),
@@ -1242,10 +1251,12 @@ pos = Cesium.Cartesian3.fromDegrees(cartPoints[i].lon, cartPoints[i].lat, cartPo
                 color : Cesium.ColorGeometryInstanceAttribute.fromColor(Cesium.Color.RED.withAlpha(0.3))
             }
         });
-        scene.primitives.add(new Cesium.Primitive({
+        var circlePrimitive = new Cesium.Primitive({
             geometryInstances : instance,
             appearance : new Cesium.PerInstanceColorAppearance()
-        }));
+        });
+        scene.primitives.add(circlePrimitive);
+        _visibleCirclePrimitives.push(circlePrimitive);
     }
 
     function disableInput(scene) {

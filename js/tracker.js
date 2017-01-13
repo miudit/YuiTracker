@@ -291,6 +291,13 @@ var Yuisattrack = function() {
 				data: data,
 				success: function(data, dataType){
 	  				console.log("SUCCESS! data = ", data);
+					if(data == 1){
+						console.log("thx");
+						$("#modal_appear").trigger("click");
+					}
+					else{
+						alert("正しく入力されていない項目があります");
+					}
 				},
 				error: function(XMLHttpRequest, textStatus, errorThrown){
 					console.log("data = " + data.time + ", " + data.lon + "," + data.lat + "," + data.data)
