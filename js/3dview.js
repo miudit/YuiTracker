@@ -1326,6 +1326,7 @@ pos = Cesium.Cartesian3.fromDegrees(cartPoints[i].lon, cartPoints[i].lat, cartPo
             async: false,
             success: function(json){
                 var telemetry = json[0];
+
                 $("#heikinn").html(telemetry.bat_temp_ave);
                 $("#plusY").html(telemetry.pannel_temp_plusY);
                 $("#minusY").html(telemetry.pannel_temp_minusY);
@@ -1335,6 +1336,26 @@ pos = Cesium.Cartesian3.fromDegrees(cartPoints[i].lon, cartPoints[i].lat, cartPo
                 $("#kaisuu").html(telemetry.comsysB_numof_succesful_reception);
                 $("#keitou").html(telemetry.com_system);
                 $("#joukyou").html(telemetry.antenna_open);
+
+                $("#det_volt").val(telemetry.solar_voltage)
+                $("#det_plusZ").val(telemetry.pannel_temp_plusZ)
+                $("#det_plusY").val(telemetry.pannel_temp_plusY)
+                $("#det_tx_current_consumption").val(telemetry.comsysB_current_consumption_tx)
+                $("#det_rx_current_consumption").val(telemetry.comsysB_current_consumption_rx)
+                $("#det_num_of_succesful").val(telemetry.comsysB_numof_succesful_reception)
+                $("#det_supply_volt").val(telemetry.comsysA_supply_voltage)
+                $("#det_current_consumption").val(telemetry.comsysA_current_consumption)
+                $("#det_minusY").val(telemetry.pannel_temp_minusY)
+                $("#det_minusZ").val(telemetry.pannel_temp_minusZ)
+                $("#det_bat_temp_1").val(telemetry.bat_temp_1)
+                $("#det_bat_temp_ave").val(telemetry.bat_temp_ave)
+                $("#det_bat_volt").val(telemetry.bat_voltage)
+                $("#det_bat_current").val(telemetry.bat_current)
+                $("#det_antenna_open").val(telemetry.antenna_open)
+                $("#det_main_pic_current_consumption").val(telemetry.main_pic_current_consumption)
+                $("#det_pow_pic_current_consumption").val(telemetry.pow_pic_current)
+                $("#det_msp_current_consumption").val(telemetry.msp_current_consumption)
+                $("#det_com_pic_current_consumption").val(telemetry.com_pic_current_consumption)
             },
             error: function(){
                 console.log("failed to get from get-telemetry.php");

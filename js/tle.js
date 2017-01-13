@@ -138,10 +138,21 @@ var YUITLE = function() {
 
 	function loadElements() {
 		rawKeps = Array()
-		rawKeps[0] = 'ISS (ZARYA)'
+		$.ajax({
+			url: './tle.txt',
+			success: function(data){
+				var arr = data.split(/\r\n|\r|\n/);
+				arr = arr.slice(0, 3);
+				for(var i in arr){
+					console.log(i + ':' + arr[i]);
+					rawKeps[i] = arr[i];
+				}
+				processRawData();
+			}
+		});
+		/*rawKeps[0] = 'ISS (ZARYA)'
 		rawKeps[1] = '1 25544U 98067A   16304.87782578  .00005242  00000-0  85556-4 0  9992'
-		rawKeps[2] = '2 25544  51.6439 101.2578 0007101 126.7131  31.9955 15.54390870 26095'
-		processRawData();
+		rawKeps[2] = '2 25544  51.6439 101.2578 0007101 126.7131  31.9955 15.54390870 26095'*/
 	}
 
 	return {
