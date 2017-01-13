@@ -87,31 +87,31 @@
 <form>
     <ul class="textbox1">
         <li class="heikinn">
-            <input id="heikinn" class="black" type="text" name="name" value="test" size="12">
+            <input id="heikinn" class="black" type="text" name="name" size="12">
         </li>
         <li class="plusY">
-            <input id="email" class="black" type="text" name="email" size="12">
+            <input id="plusY" class="black" type="text" name="email" size="12">
         </li>
         <li class="minusY">
-            <input id="msg" class="black" name="msg" size="12">
+            <input id="minusY" class="black" name="msg" size="12">
         </li>
         <li class="plusZ">
-            <input id="msg" class="black" name="msg" size="12">
+            <input id="plusZ" class="black" name="msg" size="12">
         </li>
         <li class="minusZ">
-            <input id="msg" class="black" name="msg" size="12">
+            <input id="minusZ" class="black" name="msg" size="12">
         </li>
         <li class="volt">
-            <input id="msg" class="black" name="msg" size="12">
+            <input id="volt" class="black" name="msg" size="12">
         </li>
         <li class="kaisuu">
-            <input id="msg" class="black" name="msg" size="12">
+            <input id="kaisuu" class="black" name="msg" size="12">
         </li>
         <li class="keitou">
-            <input id="msg" class="black" name="msg" size="12">
+            <input id="keitou" class="black" name="msg" size="12">
         </li>
         <li class="joukyou">
-            <input id="msg" class="black" name="msg" size="12">
+            <input id="joukyou" class="black" name="msg" size="12">
         </li>
     </ul>
 </form>
@@ -120,8 +120,8 @@
 <p><font style="position:absolute;top:340px;left:40px;" size="3" color="#ffff00">受信報告件数</font></p>
 <p><font style="position:absolute;top:340px;left:250px;" size="3" color="#ffff00">件</font></p>
 <form>
-<input class="kidou black" name="msg" size="20" value="00:01:00">
-<input class="ken black" name="msg" size="11">
+<input id="active_time" class="kidou black" name="msg" size="20">
+<input id="report_count" class="ken black" name="msg" size="11">
 </form>
 
 <!--中央-->
@@ -146,13 +146,14 @@
             <input type="button" id="pos_toggle_button">aaa</button>
         </li>
         <li class="mail">
-            <input id="msg" name="msg" size="35">
+            <input id="email" name="msg" size="35">
         </li>
         <li class="time">
-            <input id="msg" name="msg" size="35">
+            <input id="time" name="msg" size="35">
         </li>
         <li class="text">
-            <input id="msg" name="msg" size="35">
+            <input id="data" name="msg" size="35">
+            <input id="submit" type="button">
         </li>
     </ul>
 </form>

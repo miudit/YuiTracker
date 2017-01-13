@@ -101,8 +101,8 @@ var Yuisattrack = function() {
 				var latitudeString = Cesium.Math.toDegrees(cartographic.latitude).toFixed(2);
 
 				//alert(longitudeString + ', ' + latitudeString);
-				$("#ido").val(longitudeString)
-				$("#keido").val(latitudeString)
+				$("#ido").val(latitudeString)
+				$("#keido").val(longitudeString)
 			} else {
 				alert('Please zoom in more');
 			}
@@ -278,10 +278,10 @@ var Yuisattrack = function() {
 	function setAjaxCallers() {
 		$('#submit').click(function(){
 			var data = {
-				lon : $('#lon').val(),
-				lat : $('#lat').val(),
-				data : $('#data').val(),
-				comment : $('#comment').val(),
+				time : $('#time').val(),
+				lon : $('#keido').val(),
+				lat : $('#ido').val(),
+				data : $('#data').val()
 			};
 			$.ajax({
 				type: "POST",
@@ -291,6 +291,7 @@ var Yuisattrack = function() {
 	  				console.log("SUCCESS! data = ", data);
 				},
 				error: function(XMLHttpRequest, textStatus, errorThrown){
+					console.log("data = " + data.time + ", " + data.lon + "," + data.lat + "," + data.data)
 	  				alert('Error : ' + errorThrown);
 	  				$("#XMLHttpRequest").html("XMLHttpRequest : " + XMLHttpRequest.status);
 	  				$("#textStatus").html("textStatus : " + textStatus);

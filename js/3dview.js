@@ -1288,8 +1288,7 @@ pos = Cesium.Cartesian3.fromDegrees(cartPoints[i].lon, cartPoints[i].lat, cartPo
         $.when(
             reports = getReports()
         ).done(function(){
-            console.log("reports = ");
-            console.log(reports);
+            $("#report_count").val(reports.length);
             var pinBuilder = new Cesium.PinBuilder();
             for( var i in reports ){
                 var report = reports[i];
@@ -1303,6 +1302,31 @@ pos = Cesium.Cartesian3.fromDegrees(cartPoints[i].lon, cartPoints[i].lat, cartPo
                         verticalOrigin : Cesium.VerticalOrigin.BOTTOM
                     }
                 });
+            }
+        });
+    }
+
+    function getTelemetry() {
+        console.log("GET TELEMETRY");
+        $.ajax({
+            type: 'GET',
+            url: './php/get-telemetry.php',
+            dataType: 'json',
+            async: false,
+            success: function(json){
+                var telemetry = json[0];
+                $("#heikinn").val(telemetry.bat_temp_ave);
+                $("#plusY").val(telemetry.pannel_temp_plusY);
+                $("#minusY").val(telemetry.pannel_temp_minusY);
+                $("#plusZ").val(telemetry.pannel_temp_plusZ);
+                $("#minusZ").val(telemetry.pannel_temp_minusZ);
+                $("#volt").val(telemetry.bat_voltage);
+                $("#kaisuu").val(telemetry.comsysB_numof_succesful_reception);
+                $("#keitou").val(telemetry.com_system);
+                $("#joukyou").val(telemetry.antenna_open);
+            },
+            error: function(){
+                console.log("failed to get from get-telemetry.php");
             }
         });
     }
@@ -1431,6 +1455,8 @@ pos = Cesium.Cartesian3.fromDegrees(cartPoints[i].lon, cartPoints[i].lat, cartPo
         jQuery(window).trigger('resize');
 
         drawReportPins();
+
+        getTelemetry();
 
         //plotObservers();
 
