@@ -291,6 +291,10 @@ var Yuisattrack = function() {
 				lat : $('#ido').val(),
 				data : $('#data').val()
 			};
+			var valid = (new Date(data.time)).getTime() > 0;
+			if( valid && english ){
+				data.time = new Date((new Date(data.time)).getTime() + 9*60*60000);
+			}
 			$.ajax({
 				type: "POST",
 				url: "./php/add-report.php",
