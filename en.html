@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <!-- Make the application on mobile take up the full browser screen and disable user scaling. -->
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
-  <title>Hello World!</title>
+  <title>ITF-2 Reception Report</title>
   <script type="text/javascript" src="/js/jquery.js"></script>
   <script type="text/javascript" src="/js/jquery.cookies.js"></script>
   <script src="./js/tracker.js"></script>
@@ -76,39 +76,39 @@
         <a data-remodal-target="modal1" href="#" style="position:absolute;top:75%;left:80%;"><font color="#ffff00">●Detailed Information</font></a>
 
         <!--fadeで入れ替わる-->
-        <ul id="slider" class="slider" style="position:absolute ;top:4%;left:78%;">
-          <li><a href=""><img src="image/eisei1.jpg" style="position:relative ;top:0%;left:0%;height: 150px; width: 150px;"alt="" /></a></li>
-          <li><a href=""><img src="image/eisei2.jpg" style="position:relative ;top:0%;left:0%;height: 150px; width: 150px;" alt="" /></a></li>
-          <li><a href=""><img src="image/eisei3.jpg" style="position:relative ;top:0%;left:0%;height: 150px; width: 150px;" alt="" /></a></li>
+        <ul id="slider" class="slider" style="position:relative; top:4%">
+          <li><img src="image/eisei1.jpg" style="position:relative ;top:40;left:82%;height: 150px; width: 150px;" alt="" /></li>
+          <li><img src="image/eisei2.jpg" style="position:relative ;top:40;left:82%;height: 150px; width: 150px;" alt="" /></li>
+          <li><img src="image/eisei3.jpg" style="position:relative ;top:40;left:82%;height: 150px; width: 150px;" alt="" /></li>
         </ul>
 
         <table class="table1">
             <tr>
-                <td><font size="2" color="#ffff00">Battery temp avg</font></td><td><font id="heikinn" size="2" color="#ffff00"></font><font size="2" color="#ffff00">  °C</font></td>
+                <td><font size="2" color="#ffff00">Battery Temp avg</font></td><td><font id="heikinn" size="2" color="#ffff00"></font><font size="2" color="#ffff00">  °C</font></td>
             </tr>
             <tr>
-                <td><font size="2" color="#ffff00">+Y panel temp</font></td><td><font id="plusY" size="2" color="#ffff00"></font><font size="2" color="#ffff00">  °C</font></td>
+                <td><font size="2" color="#ffff00">+Y Panel Temp</font></td><td><font id="plusY" size="2" color="#ffff00"></font><font size="2" color="#ffff00">  °C</font></td>
             </tr>
             <tr>
-                <td><font size="2" color="#ffff00">-Y panel temp</font></td><td><font id="minusY" size="2" color="#ffff00"></font><font size="2" color="#ffff00">  °C</font></td>
+                <td><font size="2" color="#ffff00">-Y Panel Temp</font></td><td><font id="minusY" size="2" color="#ffff00"></font><font size="2" color="#ffff00">  °C</font></td>
             </tr>
             <tr>
-                <td><font size="2" color="#ffff00">+Z panel temp</font></td><td><font id="plusZ" size="2" color="#ffff00"></font><font size="2" color="#ffff00">  °C</font></td>
+                <td><font size="2" color="#ffff00">+Z Panel Temp</font></td><td><font id="plusZ" size="2" color="#ffff00"></font><font size="2" color="#ffff00">  °C</font></td>
             </tr>
             <tr>
-                <td><font size="2" color="#ffff00">-Z panel temp</font></td><td><font id="minusZ" size="2" color="#ffff00"></font><font size="2" color="#ffff00">  °C</font></td>
+                <td><font size="2" color="#ffff00">-Z Panel Temp</font></td><td><font id="minusZ" size="2" color="#ffff00"></font><font size="2" color="#ffff00">  °C</font></td>
             </tr>
             <tr>
-                <td><font size="2" color="#ffff00">Solar cell volt</font></td><td><font id="volt" size="2" color="#ffff00"></font><font size="2" color="#ffff00">  V</font></td>
+                <td><font size="2" color="#ffff00">Solar Cell Volt</font></td><td><font id="volt" size="2" color="#ffff00"></font><font size="2" color="#ffff00">  V</font></td>
             </tr>
             <tr>
-                <td><font size="2" color="#ffff00">Number of succesful <br> reception from sys.B</font></td><td><font id="kaisuu" size="2" color="#ffff00"></font><font size="2" color="#ffff00">  回</font></td>
+                <td><font size="2" color="#ffff00">Number of Succesful <br> Reception from sys.B</font></td><td><font id="kaisuu" size="2" color="#ffff00"></font></td>
             </tr>
             <tr>
-                <td><font size="2" color="#ffff00">Communication system</font></td><td><font id="keitou" size="2" color="#ffff00"></font></td>
+                <td><font size="2" color="#ffff00">Communication System</font></td><td><font id="keitou" size="2" color="#ffff00"></font></td>
             </tr>
             <tr>
-                <td><font size="2" color="#ffff00">Antenna deployment</font></td><td><font id="joukyou" size="2" color="#ffff00"></font></td>
+                <td><font size="2" color="#ffff00">Antenna Deployment</font></td><td><font id="joukyou" size="2" color="#ffff00"></font></td>
             </tr>
         </table>
 
@@ -134,29 +134,29 @@
         </table>
 
         <!--中央-->
-        <p><font style="position:absolute;top:75%;left:42%;" size="6">Report Form</font></p>
+        <p><font style="position:absolute;top:73%;left:42%;" size="6">Report Form</font></p>
         <form>
             <table class="table3">
                 <tr>
-                    <td>Lon</td><td><input id="keido" class="black" type="text" name="keido" size="7"></td><td style="width:10px;"></td><td>Lat</td><td><input id="ido" class="black" type="text" name="ido" size="7"></td><td style="width:10px;"></td><td><input id="pos_toggle_button" type="button" value="Set"></td>
+                    <td><b>Lon</b></td><td><input id="keido" class="black" type="text" name="keido" size="7"></td><td style="width:10px;"></td><td><b>Lat</b></td><td><input id="ido" class="black" type="text" name="ido" size="7"></td><td style="width:10px;"></td><td><input id="pos_toggle_button" type="button" value="Set"></td>
                 </tr>
             </table>
             <table class="table4">
                 <tr>
-                    <td>Email</td><td><input id="email" class="black2" name="email" size="35"></td>
+                    <td><b>Email</b></td><td><input id="email" class="black2" name="email" size="35"></td>
                 </tr>
                 <tr>
-                    <td>Date</td><td><input id="time" class="black2" name="time" size="35" value="yyyy-mm-dd hh:mm:ss"></td>
+                    <td><b>Date</b></td><td><input id="time" class="black2" name="time" size="35" value="yyyy-mm-dd hh:mm:ss"></td>
                 </tr>
                 <tr>
-                    <td>Received Text</td><td><input id="data" class="black2" name="data" size="35"></td>
+                    <td><b>Received Text</b></td><td><input id="data" class="black2" name="data" size="35"></td>
                 </tr>
             </table>
         </form>
 
         <table>
             <tr>
-                <p style="position:absolute;top:85%;left:71%;"><font size="2">Send</p>
+                <p style="position:absolute;top:85%;left:70.5%;"><font size="2"><b>Submit</b></p>
             </tr>
             <tr>
                 <input id="submit" type="image" src="./image/button_orange.png" style="position:absolute;top:90%;left:70%;width:50px;height:auto;">
@@ -170,7 +170,7 @@
 
         <table>
             <tr>
-                <p style="position:absolute;top:85%;left:15%;"><font size="2">Manual</p>
+                <p style="position:absolute;top:85%;left:15.3%;"><font size="2"><b>Manual</b></p>
             </tr>
             <tr>
                 <input id="manual" data-remodal-target="modal2"  type="image" src="./image/button_green.png" style="position:absolute;top:90%;left:15%;width:50px;height:auto;">
@@ -179,7 +179,7 @@
 
         <table>
             <tr>
-                <p style="position:absolute;top:85%;left:25%;"><font size="2">Japanese</p>
+                <p style="position:absolute;top:85%;left:25%;"><font size="2"><b>Japanese</b></p>
             </tr>
             <tr>
                 <a href="./tracker.html"><img src="./image/button_green.png" style="position:absolute;top:90%;left:25%;width:50px;height:auto;"></a>

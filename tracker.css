@@ -11,14 +11,18 @@ body{
 .table1{
 	position:absolute;
 	list-style: none;
-	top:30%;
-	left:80%;
+	top:33%;
+	left:82%;
 }
 .table2{
 	position:absolute;
 	list-style: none;
 	top:40%;
 	left:3%;
+}
+.outline{
+	text-shadow: white 1px 1px 0px, white -1px 1px 0px,
+	             white 1px -1px 0px, white -1px -1px 0px;
 }
 .black{
 	background-color: #000000;

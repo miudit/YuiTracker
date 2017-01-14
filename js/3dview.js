@@ -1306,7 +1306,7 @@ pos = Cesium.Cartesian3.fromDegrees(cartPoints[i].lon, cartPoints[i].lat, cartPo
                 var lat = report.lat;
                 var lon = report.lon
                 var bluePin = viewer.entities.add({
-                    name : 'Blank blue pin',
+                    name : 'Report' + report.report_id ,
                     position : Cesium.Cartesian3.fromDegrees(lon, lat),
                     billboard : {
                         image : pinBuilder.fromColor(Cesium.Color.ROYALBLUE, 48).toDataURL(),

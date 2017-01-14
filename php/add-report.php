@@ -26,7 +26,6 @@
     }
     if($flag){
         // post to slack
-        $slackApiKey = 'xoxp-7972272885-7972577940-128032241270-edfb498b9be5aa3664128d1cf5204062';
         $attachments = array(
             "fallback" => "Report Received! - Data : ${data} From : (${longitude}, ${latitude})",
             "text" => "Report Received!",
