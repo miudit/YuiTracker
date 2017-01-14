@@ -1,7 +1,8 @@
 <?php
 
     #require_once('/var/www/web-app/public/components/connect_database.php');
-    require_once('/Library/WebServer/Documents/YuiTracker/php/connect_database.php');
+    require_once('/var/www/YuiTracker/php/connect_database.php');
+    #require_once('/Library/WebServer/Documents/YuiTracker/php/connect_database.php');
 
     $time       = $_POST['time'];
     $data 	    = $_POST['data'];

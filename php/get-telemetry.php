@@ -1,7 +1,8 @@
 <?php
 
     #require_once('/var/www/web-app/public/components/connect_database.php');
-    require_once('/Library/WebServer/Documents/YuiTracker/php/connect_database.php');
+    require_once('/var/www/YuiTracker/php/connect_database.php');
+    #require_once('/Library/WebServer/Documents/YuiTracker/php/connect_database.php');
 
     $sql  = 'select * from telemetry order by time desc limit 1';
     $stmt = $pdo->prepare($sql);
