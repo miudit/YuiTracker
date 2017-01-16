@@ -295,28 +295,38 @@ var Yuisattrack = function() {
 			if( valid && english ){
 				data.time = new Date((new Date(data.time)).getTime() + 9*60*60000);
 			}
-			$.ajax({
-				type: "POST",
-				url: "./php/add-report.php",
-				data: data,
-				success: function(data, dataType){
-	  				console.log("SUCCESS! data = ", data);
-					if(data == 1){
-						console.log("thx");
-						$("#modal_appear").trigger("click");
+			if(valid){
+				$.ajax({
+					type: "POST",
+					url: "./php/add-report.php",
+					data: data,
+					success: function(data, dataType){
+		  				console.log("SUCCESS! data = ", data);
+						if(data == 1){
+							console.log("thx");
+							$("#modal_appear").trigger("click");
+						}
+						else{
+							alert("正しく入力されていない項目があります");
+						}
+					},
+					error: function(XMLHttpRequest, textStatus, errorThrown){
+						console.log("data = " + data.time + ", " + data.lon + "," + data.lat + "," + data.data)
+		  				alert('Error : ' + errorThrown);
+		  				$("#XMLHttpRequest").html("XMLHttpRequest : " + XMLHttpRequest.status);
+		  				$("#textStatus").html("textStatus : " + textStatus);
+		  				$("#errorThrown").html("errorThrown : " + errorThrown);
 					}
-					else{
-						alert("正しく入力されていない項目があります");
-					}
-				},
-				error: function(XMLHttpRequest, textStatus, errorThrown){
-					console.log("data = " + data.time + ", " + data.lon + "," + data.lat + "," + data.data)
-	  				alert('Error : ' + errorThrown);
-	  				$("#XMLHttpRequest").html("XMLHttpRequest : " + XMLHttpRequest.status);
-	  				$("#textStatus").html("textStatus : " + textStatus);
-	  				$("#errorThrown").html("errorThrown : " + errorThrown);
+	  			});
+			}
+			else {
+				if(!english){
+					alert("時間が正しく入力されていません");
 				}
-  			});
+				else{
+					alert("Time is Incorrect");
+				}
+			}
   			return false;
 		});
 	}
