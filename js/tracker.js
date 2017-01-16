@@ -97,8 +97,8 @@ var Yuisattrack = function() {
 			console.log("camera = " + viewer.scene.camera)
 			if (cartesian) {
 				var cartographic = ellipsoid.cartesianToCartographic(cartesian);
-				var longitudeString = Cesium.Math.toDegrees(cartographic.longitude).toFixed(2);
-				var latitudeString = Cesium.Math.toDegrees(cartographic.latitude).toFixed(2);
+				var longitudeString = Cesium.Math.toDegrees(cartographic.longitude).toFixed(4);
+				var latitudeString = Cesium.Math.toDegrees(cartographic.latitude).toFixed(4);
 
 				//alert(longitudeString + ', ' + latitudeString);
 				$("#ido").val(latitudeString)
