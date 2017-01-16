@@ -265,7 +265,7 @@
           var release = new Date('Mon Jan 16 2017 18:10:00 GMT+0900');
           var hour = parseInt(hourDistance(release, now));
           var minute = parseInt(minuteDistance(release, now)) - 60*hour;
-          var second = parseInt(secondDistance(release, now)) - 60*minute;
+          var second = parseInt(secondDistance(release, now)) - 3600*hour - 60*minute;
           countElm.html(hour + 'h' + minute + 'm' + second + 's');
       }
     </script>

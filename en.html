@@ -214,6 +214,51 @@
           timeline : false
       });
       var english = true;
+
+      var SECOND_MILLISECOND = 1000,
+      MINUTE_MILLISECOND = 60 * SECOND_MILLISECOND,
+      HOUR_MILLISECOND = 60 * MINUTE_MILLISECOND,
+      DAY_MILLISECOND = 24 * HOUR_MILLISECOND,
+      WEEK_MILLISECOND = 7 * DAY_MILLISECOND,
+      YEAR_MILLISECOND = 365 * DAY_MILLISECOND;
+
+      /**
+       *  @returns {number}
+       *  @param {Date} src
+       *  @param {Date} dst
+       */
+      var yearDistance = function (src, dst) {
+          var deltaMillsecond = dst.getTime() - src.getTime();
+          return deltaMillsecond / YEAR_MILLISECOND;
+      },
+      hourDistance = function (src, dst) {
+          var deltaMillsecond = dst.getTime() - src.getTime();
+          return deltaMillsecond / HOUR_MILLISECOND;
+      },
+      minuteDistance = function (src, dst) {
+          var deltaMillsecond = dst.getTime() - src.getTime();
+          return deltaMillsecond / MINUTE_MILLISECOND;
+      },
+      secondDistance = function (src, dst) {
+          var deltaMillsecond = dst.getTime() - src.getTime();
+          return deltaMillsecond / SECOND_MILLISECOND;
+      },
+      millisecondDistance = function (src, dst) {
+          return dst.getTime() - src.getTime();
+      };
+
+    var countElm = $("#active_time");
+
+    setInterval("countUp()", 1000);
+
+    function countUp(){
+        var now = new Date();
+        var release = new Date('Mon Jan 16 2017 18:10:00 GMT+0900');
+        var hour = parseInt(hourDistance(release, now));
+        var minute = parseInt(minuteDistance(release, now)) - 60*hour;
+        var second = parseInt(secondDistance(release, now)) - 3600*hour - 60*minute;
+        countElm.html(hour + 'h' + minute + 'm' + second + 's');
+    }
     </script>
 
 
