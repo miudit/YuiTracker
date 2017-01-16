@@ -1,0 +1,89 @@
+body{
+	font-family: helvetica, arial, 'hiragino kaku gothic pro', meiryo, 'ms pgothic', sans-serif;
+}
+
+.textbox1{
+		position:absolute;
+		list-style: none;
+		top:180px;
+		left:1090px;
+}
+.table1{
+	position:absolute;
+	list-style: none;
+	top:33%;
+	left:82%;
+}
+.table2{
+	position:absolute;
+	list-style: none;
+	top:40%;
+	left:3%;
+}
+.outline{
+	text-shadow: white 1px 1px 0px, white -1px 1px 0px,
+	             white 1px -1px 0px, white -1px -1px 0px;
+}
+.black{
+	background-color: #000000;
+	outline: 0;
+	border: none;
+	color: #ffff00;
+	text-align: right;
+}
+.black2{
+	background-color: #000000;
+	outline: 0;
+	border: none;
+	color: #ffff00;
+}
+.detblack{
+	background-color: #000000;
+	outline: 0;
+	border: none;
+	color: #00ff00;
+	text-align: right;
+	font-size: 10px;
+}
+.table3{
+	list-style: none;
+	position:absolute;
+	top:70%;
+	left:0%;
+}
+.table4{
+	list-style: none;
+	position:absolute;
+	top:80%;
+	left:0%;
+}
+.keido{
+	position:absolute;
+	top:83%;
+	left:35%;
+}
+.ido{
+	position:absolute;
+	top:83%;
+	left:50%;
+}
+.pos_toggle_button{
+	position:absolute;
+	top:83%;
+	left:63%;
+}
+.mail{
+	position:absolute;
+	top:87%;
+	left:45%;
+}
+.time{
+	position:absolute;
+	top:91%;
+	left:45%;
+}
+.text{
+	position:absolute;
+	top:95%;
+	left:45%;
+}

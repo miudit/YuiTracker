@@ -31,7 +31,7 @@
   <script src="/js/modernizer.js"></script>
   <script src="/js/platform.js"></script>
   <script src="/js/startup.js"></script>
-  <link rel="stylesheet" type="text/css" href="tracker.css"/>
+  <link rel="stylesheet" type="text/css" href="tracker.sp.css"/>
   <link rel="stylesheet" type="text/css" href="css/slick.css"/>
   <link rel="stylesheet" type="text/css" href="css/slick-theme.css"/>
   <link rel="stylesheet" href="css/remodal.css">
@@ -53,107 +53,7 @@
 </head>
 <body>
 
-    <div id="Container">
-
-        <img src="./image/zentai_new.png" align="center" style="position:absolute; top:0%;height:100%; width:100%;"  alt=""　/>
-        <img src="./image/logo_with_title.png" style="position:absolute;top:5%;left:3%;width:200px;height;200px;" alt=""　　/>
-
-        <!--モーダル-->
-        <div id="modal1" class="remodal" data-remodal-id="modal1">
-            <button data-remodal-action="close" class="remodal-close"></button>
-            <img src="./image/eisei_zentai.jpg" style="position:absolute; top:0%;left:0%;height: 100%; width: 100%;" alt=""　/>
-            <input id="det_volt" class="detblack" size=3 style="position:absolute;top:19.5%;left:15.3%;">
-            <input id="det_plusZ" class="detblack" size=3 style="position:absolute;top:19.2%;left:41.5%;">
-            <input id="det_plusY" class="detblack" size=3 style="position:absolute;top:28.7%;left:43.2%;">
-            <input id="det_tx_current_consumption" class="detblack" size=3 style="position:absolute;top:10%;left:62%;">
-            <input id="det_rx_current_consumption" class="detblack" size=3 style="position:absolute;top:15.5%;left:63.1%;">
-            <input id="det_num_of_succesful" class="detblack" size=3 style="position:absolute;top:21.5%;left:64.1%;">
-            <input id="det_supply_volt" class="detblack" size=3 style="position:absolute;top:8.2%;left:86.9%;">
-            <input id="det_current_consumption" class="detblack" size=3 style="position:absolute;top:11.7%;left:86.45%;">
-            <input id="det_minusY" class="detblack" size=3 style="position:absolute;top:26.5%;left:91%;">
-            <input id="det_minusZ" class="detblack" size=3 style="position:absolute;top:39.2%;left:89.6%;">
-            <input id="det_bat_temp_1" class="detblack" size=3 style="position:absolute;top:58%;left:15%;">
-            <input id="det_bat_temp_ave" class="detblack" size=3 style="position:absolute;top:61.5%;left:16%;">
-            <input id="det_bat_volt" class="detblack" size=3 style="position:absolute;top:65%;left:17%;">
-            <input id="det_bat_current" class="detblack" size=3 style="position:absolute;top:68.1%;left:18%;">
-            <input id="det_antenna_open" class="detblack" size=3 style="position:absolute;top:61.5%;left:40.2%;">
-            <input id="det_main_pic_current_consumption" class="detblack" size=3 style="position:absolute;top:84%;left:64.7%;">
-            <input id="det_pow_pic_current_consumption" class="detblack" size=3 style="position:absolute;top:87.9%;left:69%;">
-            <input id="det_msp_current_consumption" class="detblack" size=3 style="position:absolute;top:55.8%;left:89.7%;">
-            <input id="det_com_pic_current_consumption" class="detblack" size=3 style="position:absolute;top:59%;left:92.7%;">
-        </div>
-
-        <a data-remodal-target="modal1" href="#" style="position:absolute;top:75%;left:80%;"><font color="#ffff00">●詳細情報</font></a>
-
-        <!--fadeで入れ替わる-->
-        <ul id="slider" class="slider" style="position:relative; top:4%">
-          <li><img src="image/eisei1.jpg" style="position:relative ;top:40;left:82%;height: 150px; width: 150px;" alt="" /></li>
-          <li><img src="image/eisei2.jpg" style="position:relative ;top:40;left:82%;height: 150px; width: 150px;" alt="" /></li>
-          <li><img src="image/eisei3.jpg" style="position:relative ;top:40;left:82%;height: 150px; width: 150px;" alt="" /></li>
-        </ul>
-
-        <table class="table1">
-            <tr>
-                <td><font size="2" color="#ffff00">バッテリ温度平均</font></td><td><font id="heikinn" size="2" color="#ffff00"></font><font size="2" color="#ffff00">  °C</font></td>
-            </tr>
-            <tr>
-                <td><font size="2" color="#ffff00">+Y面パネル温度</font></td><td><font id="plusY" size="2" color="#ffff00"></font><font size="2" color="#ffff00">  °C</font></td>
-            </tr>
-            <tr>
-                <td><font size="2" color="#ffff00">-Y面パネル温度</font></td><td><font id="minusY" size="2" color="#ffff00"></font><font size="2" color="#ffff00">  °C</font></td>
-            </tr>
-            <tr>
-                <td><font size="2" color="#ffff00">+Z面パネル温度</font></td><td><font id="plusZ" size="2" color="#ffff00"></font><font size="2" color="#ffff00">  °C</font></td>
-            </tr>
-            <tr>
-                <td><font size="2" color="#ffff00">-Z面パネル温度</font></td><td><font id="minusZ" size="2" color="#ffff00"></font><font size="2" color="#ffff00">  °C</font></td>
-            </tr>
-            <tr>
-                <td><font size="2" color="#ffff00">太陽電池電圧</font></td><td><font id="volt" size="2" color="#ffff00"></font><font size="2" color="#ffff00">  V</font></td>
-            </tr>
-            <tr>
-                <td><font size="2" color="#ffff00">受信系統B 通信成功回数</font></td><td><font id="kaisuu" size="2" color="#ffff00"></font><font size="2" color="#ffff00">  回</font></td>
-            </tr>
-            <tr>
-                <td><font size="2" color="#ffff00">通信系統</font></td><td><font id="keitou" size="2" color="#ffff00"></font></td>
-            </tr>
-            <tr>
-                <td><font size="2" color="#ffff00">アンテナ展開状況</font></td><td><font id="joukyou" size="2" color="#ffff00"></font></td>
-            </tr>
-        </table>
-
-        <!--左-->
-        <!--<p><font style="position:absolute;top:310px;left:20px;" size="3" color="#ffff00">衛星起動時間</font></p>
-        <p><font style="position:absolute;top:340px;left:40px;" size="3" color="#ffff00">受信報告件数</font></p>
-        <p><font style="position:absolute;top:340px;left:250px;" size="3" color="#ffff00">件</font></p>
-        <form>
-        <input id="active_time" class="kidou black" name="msg" size="20">
-        <input id="report_count" class="ken black" name="msg" size="11">
-    </form>-->
-
-        <table class="table2">
-            <tr>
-                <td><font size="4" color="#ffff00">衛星起動時間</font></td><td width="10px"></td><td><font id="active_time" size="4" color="#ffff00"></font></td>
-            </tr>
-            <tr>
-                <td><font size="4" color="#ffff00">受信報告件数</font></td><td width="10px"></td><td><font id="report_count" size="4" color="#ffff00"></font><font size="4" color="#ffff00">件</font></td>
-            </tr>
-            <tr>
-                <td><font size="4" color="#ffff00">運用フェーズ</font></td><td width="10px"></td><td><font id="operation_phase" size="4" color="#ffff00">初期運用</font></td>
-            </tr>
-        </table>
-
-        <!--中央-->
-        <!--<p><font style="position:absolute;top:75%;left:42%;" size="6" >受信報告フォーム</font></p>
-        <p><font style="position:absolute;top:83%;left:30%;" size="3" >経度</font></p>
-        <p><font style="position:absolute;top:83%;left:43%;" size="3" >度</font></p>
-        <p><font style="position:absolute;top:83%;left:45%;" size="3" >緯度</font></p>
-        <p><font style="position:absolute;top:83%;left:58%;" size="3" >度</font></p>
-        <p><font style="position:absolute;top:87%;left:30%;" size="3" >メールアドレス</font></p>
-        <p><font style="position:absolute;top:91%;left:30%;" size="3" >受信時刻</font></p>
-        <p><font style="position:absolute;top:95%;left:30%;" size="3" >受信テキスト</font></p>
-        <p><font style="position:absolute;top:89.5%;left:81.7%;" size="3" >受信報告</font></p>-->
-        <p><font style="position:absolute;top:73%;left:42%;" size="6">受信報告フォーム</font></p>
+        <p><font style="position:absolute;top:60%;left:0%;" size="6">受信報告フォーム</font></p>
         <form>
             <table class="table3">
                 <tr>
@@ -224,7 +124,7 @@
     <a id="modal_appear" data-remodal-target="modal_thx" href="#" style="visibility:hidden"></a>
 
 
-    <div style="position:absolute;top:7%;left:28%;width:45%;height:60%" id="cesiumContainer"></div>
+    <div style="position:absolute;top:0%;left:0%;width:100%;height60%" id="cesiumContainer"></div>
     <script>
         var bingAPIKey = 'eYQRI0XvnhMEi5nkk3BP~d3179loNhbAIkgMvCdxjuA~Ar2FasqaLe3L9smvcOzPwDqNTaVbs7aTfGuXWRRmvMvbQHATV6aWEYX_vR86j_2F';
         Cesium.BingMapsApi.defaultKey = bingAPIKey;
