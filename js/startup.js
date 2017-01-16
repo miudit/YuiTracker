@@ -2,13 +2,22 @@ $(document).ready(function() {
     'use strict';
 
     Modernizr.load({
-        test : YUIUTIL.webGlTest(),
+        test : function(){
+            YUIUTIL.webGlTest();
+        },
         yep : './Build/Cesium/Cesium.js',
+            callback : function( url, result, key ){
+                console.log("callback");
+                console.log( url ); /* ロードされたリソースのURL */
+                console.log( result ); /* testの結果（true|false） */
+                console.log( key ); /* yep|nope におけるインデックス（またはキー） */
+            },
             complete : function(){
                 /*YuiSatTrack = new Yuisattrack();
                 YuiSatTrack.init();
                 alert("complete!!!")*/
 
+                console.log("compltere");
                 YUISETTINGS.setHaveWebGL(YUIUTIL.webGlTest());
                 YUISETTINGS.setHaveCanvas(Modernizr.canvas);
 
@@ -26,7 +35,9 @@ $(document).ready(function() {
 
                 });
             },
-        nope : function(){}
+        nope : function(){
+            console.log("nope");
+        }
     });
 
     /*Modernizr.load({
