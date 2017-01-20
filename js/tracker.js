@@ -294,7 +294,7 @@ var Yuisattrack = function() {
 			};
 			var valid = (new Date(data.time)).getTime() > 0;
 			if( valid && english ){
-				data.time = new Date((new Date(data.time)).getTime() + 9*60*60000);
+				data.time = new Date((new Date(data.time)).getTime());
 			}
 			if(valid){
 				$.ajax({
