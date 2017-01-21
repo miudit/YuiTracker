@@ -54,14 +54,14 @@ var YUIOBSERVER = function(index) {
                     jQuery(document).trigger('yuisattrack.locationAvailable',that);
                     var el = YUIUTIL.getId();
                     jQuery('body').append('<div id="'+el+'" />');
-                    jQuery('#'+el).dialog({
+                    /*jQuery('#'+el).dialog({
                         title: 'Geo Coding Error',
                         width: 500,
                         height: 270,
                         cache: false,
                         content: '<div id="geoerror"><h2>Sorry we were unable to set your location</h2><p>Auto geo locating your position failed. Your location has been set to 0 Degrees, 0 Degrees</p><p>Please select the options button on the Home ribbon tab. From there you can disable auto geo locating and manually enter your location.</p><p>If you do not disable auto geo locating then this error will be displayed each time you visit this site.</p><p><span class="errorcode">Error Code:</span> '+error.code+' ('+error.message+')</p></div>',
                         modal: true
-                    });
+                    });*/
                 }, {
                     timeout: 10000
                 }
