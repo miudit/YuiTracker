@@ -290,7 +290,8 @@ var Yuisattrack = function() {
 				lon : $('#keido').val(),
 				lat : $('#ido').val(),
 				data : $('#data').val(),
-				comment : $('#comment').val()
+				comment : $('#comment').val(),
+				email : $('#email').val()
 			};
 			var valid = (new Date(data.time)).getTime() > 0;
 			if( valid && english ){

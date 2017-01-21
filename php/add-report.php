@@ -9,6 +9,7 @@
     $longitude 	= $_POST['lon'];
     $latitude   = $_POST['lat'];
     $comment    = $_POST['comment'];
+    $email      = $_POST['email'];
 
     //$rst   	    = $_POST['rst'];
     //$time   	= date("Y-m-d H:i:s", time());
@@ -22,9 +23,9 @@
         $flag = false;
     }
     else {
-        $sql = 'insert into reports (time, data, latitude, longitude, comment) values (?,?,?,?,?)';
+        $sql = 'insert into reports (time, data, latitude, longitude, mail_address, comment) values (?,?,?,?,?,?)';
         $stmt = $pdo->prepare($sql);
-        $flag = $stmt->execute(array($time, $data, $latitude, $longitude, $comment));
+        $flag = $stmt->execute(array($time, $data, $latitude, $longitude, $email, $comment));
     }
     if($flag){
         // post to slack
