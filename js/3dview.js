@@ -1296,6 +1296,28 @@ pos = Cesium.Cartesian3.fromDegrees(cartPoints[i].lon, cartPoints[i].lat, cartPo
     }
 
     function drawReportPins() {
+
+        var multiplier = (100.0/60.0);
+        var websdr_pos = {
+            IO91OF: {lat: 51+0.12*multiplier, lon: -1-0.1*multiplier},
+            GG56TV: {lat: -24-0.52*multiplier, lon: -49-0.35*multiplier},
+            JN78SK: {lat: 48+0.25*multiplier, lon: 15+0.3*multiplier},
+            KG43AR: {lat: -27-0.42*multiplier, lon: 28.0}
+        };
+        var pinBuilder = new Cesium.PinBuilder();
+        for(var key in websdr_pos){
+            var lat = websdr_pos[key].lat;
+            var lon = websdr_pos[key].lon;
+            var redPin = viewer.entities.add({
+                name : 'WebSDR ' + key,
+                position : Cesium.Cartesian3.fromDegrees(lon, lat),
+                billboard : {
+                    image : pinBuilder.fromColor(Cesium.Color.RED, 48).toDataURL(),
+                    verticalOrigin : Cesium.VerticalOrigin.BOTTOM
+                }
+            });
+        }
+
         $.when(
             reports = getReports()
         ).done(function(){
