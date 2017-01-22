@@ -161,7 +161,9 @@
         <form>
             <table class="table3">
                 <tr>
-                    <td><b>経度</b></td><td><input id="keido" class="black" type="text" name="keido" size="7"></td><td style="width:10px;"></td><td><b>緯度</b></td><td><input id="ido" class="black" type="text" name="ido" size="7"></td><td style="width:10px;"></td><td><input id="pos_toggle_button" type="button" value="緯度経度をクリックで設定"></td>
+                    <td><b>住所：　　経度</b></td><td><input id="keido" class="black" type="text" name="keido" size="7"></td><td style="width:10px;"></td>
+                    <td><b>緯度</b></td><td><input id="ido" class="black" type="text" name="ido" size="7"></td><td style="width:10px;"></td>
+                    <td><input id="pos_toggle_button" type="button" value="緯度経度をクリックで設定"></td>
                 </tr>
             </table>
             <table class="table4">
@@ -173,6 +175,16 @@
                 </tr>
                 <tr>
                     <td><b>受信テキスト</b></td><td><input id="data" class="black2" name="data" size="35"></td>
+                    <td>
+                        <select id="receiver" name="receiver">
+                            <option value="">受信場所</option>
+                            <option value="websdr_uk">WebSDR(IO91OF)</option>
+                            <option value="websdr_br">WebSDR(GG56TV)</option>
+                            <option value="websdr_at">WebSDR(JN78SK)</option>
+                            <option value="websdr_za">WebSDR(KG43AR)</option>
+                            <option value="home">それ以外</option>
+                        </select>
+                    </td>
                 </tr>
                 <tr>
                     <td><b>コメント</b></td><td><input id="comment" class="black2" name="comment" size="35"></td>
@@ -214,10 +226,10 @@
 
         <table>
             <tr>
-                <p style="position:absolute;top:85%;left:24%;"><font size="2"><b>英語/English</b></p>
+                <p style="position:absolute;top:85%;left:22%;"><font size="2"><b>英語/English</b></p>
             </tr>
             <tr>
-                <a href="./en.html"><img src="./image/button_green.png" style="position:absolute;top:90%;left:25%;width:50px;height:auto;"></a>
+                <a href="./en.html"><img src="./image/button_green.png" style="position:absolute;top:90%;left:23%;width:50px;height:auto;"></a>
             </tr>
         </table>
 
