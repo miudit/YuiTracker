@@ -55,21 +55,21 @@
     <div style="position:absolute;top:0%left:0%;width:100%;height:100%">
     <div style="position:relative;top:0%;left:0%;width:100%;height60%" id="cesiumContainer"></div>
     <div style="position:relative;top:0%left:0%;width:100%;height:100%;background-color:black">
-        <div align="center" style="position:relative;top:0%;width=100%;font-size:20px">受信報告フォーム</div>
+        <div align="center" style="position:relative;top:0%;width=100%;font-size:20px">Reception Report</div>
         <form class="form">
             <table class="table3">
                 <tr>
-                    <td><b>経度 </b><input id="keido" type="text" name="keido" size="5"></td>
-                    <td><b>緯度</b></td><td><input id="ido" type="text" name="ido" size="5"></td>
-                    <td><input id="pos_toggle_button" type="button" value="タッチで設定"></td>
+                    <td><b>Lon </b><input id="keido" type="text" name="keido" size="5"></td>
+                    <td><b>Lat</b></td><td><input id="ido" type="text" name="ido" size="5"></td>
+                    <td><input id="pos_toggle_button" type="button" value="Set by touch"></td>
                     <td>
                         <select id="receiver" name="receiver" class="select">
-                            <option value="">受信場所</option>
+                            <option value="">Site</option>
                             <option value="websdr_uk">WebSDR(IO91OF)</option>
                             <option value="websdr_br">WebSDR(GG56TV)</option>
                             <option value="websdr_at">WebSDR(JN78SK)</option>
                             <option value="websdr_za">WebSDR(KG43AR)</option>
-                            <option value="home">それ以外</option>
+                            <option value="home">Other</option>
                         </select>
                     </td>
                 </tr>
@@ -79,13 +79,13 @@
                     <td><b>E-mail</b></td><td><input id="email" name="email" size="35"></td>
                 </tr>
                 <tr>
-                    <td><b>受信時刻</b></td><td><input id="time" name="time" size="35" value="yyyy-mm-dd hh:mm:ss"></td>
+                    <td><b>Date(LocalTime)</b></td><td><input id="time" name="time" size="35" value="yyyy-mm-dd hh:mm:ss"></td>
                 </tr>
                 <tr>
-                    <td><b>受信テキスト</b></td><td><input id="data" name="data" size="35"></td>
+                    <td><b>Received Text</b></td><td><input id="data" name="data" size="35"></td>
                 </tr>
                 <tr>
-                    <td><b>コメント</b></td><td><input id="comment" name="comment" size="35"></td>
+                    <td><b>Comment</b></td><td><input id="comment" name="comment" size="35"></td>
                 </tr>
             </table>
         </form>
@@ -94,8 +94,8 @@
             <img src="./image/logo_with_title.png" style="position:relative;top:10%;left:3%;width:100px;height;100px;float:left" alt=""　　/>
 
             <div class="button_table_submit">
-                <button type="button" onclick="location.href='./sp_en.html'" class="button">英語/English</button>
-                <button type="button" id="submit" class="button">送信</button>
+                <button type="button" onclick="location.href='./sp.html'" class="button">日本語/Japanese</button>
+                <button type="button" id="submit" class="button">Submit</button>
             </div>
         </div>
 
@@ -120,7 +120,7 @@
             animation : false,
             timeline : false
         });
-        var english = false;
+        var english = true;
         var spmode = true;
         /*var SECOND_MILLISECOND = 1000,
         MINUTE_MILLISECOND = 60 * SECOND_MILLISECOND,

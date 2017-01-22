@@ -110,16 +110,26 @@ var Yuisattrack = function() {
 
 		function addSetLatLngEventListener(){
 			viewer.canvas.addEventListener('click', setLatLng, false);
-			if( english )
+			if( english && spmode )
+				$("#pos_toggle_button").val("touch position");
+			else if( english )
 				$("#pos_toggle_button").val("click position");
+			else if (spmode) {
+				$("#pos_toggle_button").val("位置をタッチ");
+			}
 			else
-				$("#pos_toggle_button").val("受信位置をクリックしてください");
+				$("#pos_toggle_button").val("位置をクリックしてください");
 		}
 
 		function removeSetLatLngEventListener(){
 			viewer.canvas.removeEventListener('click', setLatLng, false);
-			if( english )
+			if( english && spmode )
+				$("#pos_toggle_button").val("Set by touch");
+			else if( english )
 				$("#pos_toggle_button").val("Set");
+			else if (spmode) {
+				$("#pos_toggle_button").val("タッチで設定");
+			}
 			else
 				$("#pos_toggle_button").val("緯度経度をクリックで設定");
 		}
@@ -164,7 +174,7 @@ var Yuisattrack = function() {
             var cDate = Cesium.JulianDate.now()
             julianDate = cDate.dayNumber + cDate.secondsOfDay;
         } else {
-            julianDate = Date.Date2Julian(new Date());
+            //julianDate = Date.Date2Julian(new Date());
         }
 
 		//_planets.update(julianDate, _observers[0]);

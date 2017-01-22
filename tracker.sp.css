@@ -1,5 +1,6 @@
 body{
 	font-family: helvetica, arial, 'hiragino kaku gothic pro', meiryo, 'ms pgothic', sans-serif;
+	color:#AAAA00;
 }
 
 .textbox1{
@@ -45,17 +46,35 @@ body{
 	text-align: right;
 	font-size: 10px;
 }
+.form{
+	position:relative;
+	top:0%;
+	left:3%;
+	width:95%;
+	height:10%;
+}
 .table3{
 	list-style: none;
-	position:absolute;
-	top:70%;
+	position:relative;
+	top:0%;
 	left:0%;
+	height:10%;
 }
 .table4{
 	list-style: none;
-	position:absolute;
-	top:80%;
+	position:relative;
+	top:0%;
 	left:0%;
+	width:100%;
+	height:10%;
+}
+.button_table_submit{
+	position:relative;
+	top:50%;
+	left:5%;
+	width:50%;
+	float: right;
+	height:30%;
 }
 .keido{
 	position:absolute;
@@ -67,11 +86,19 @@ body{
 	top:83%;
 	left:50%;
 }
-.pos_toggle_button{
-	position:absolute;
-	top:83%;
-	left:63%;
+#pos_toggle_button{
+	-webkit-appearance: none;
 }
+.button{
+	-webkit-appearance: none;
+}
+.select{
+	-webkit-appearance: none;
+	background:#EEE url(./image/arrow.png) no-repeat;
+	background-size:20px 20px;
+	background-position: right center;
+}
+
 .mail{
 	position:absolute;
 	top:87%;

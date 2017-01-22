@@ -209,8 +209,10 @@ var YUIUTIL = (function() {
         webGlTest : function() {
             var result = false;
             var disableWebGLOn = {
-                product : ['ipad', 'iphone', 'ipod'],
-                name : ['ie']
+                //product : ['ipad', 'iphone', 'ipod'],
+                //name : ['ie']
+                product : [],
+                name : []
             };
 
             function isWebBGLSupported() {
